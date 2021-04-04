@@ -1,0 +1,55 @@
+
+<form >
+    <div class="product" [formGroup]="UserForm">
+        <div> <h1 style=" font-family: 'Gotham'; " class= "Title">User Information</h1></div>
+       
+    
+            <div style=" font-family: 'Gotham'; " class='row-items'><label style=" font-family: 'Gotham'; " class= "items">User First Name :</label><input type="text"  required autocomplete="off"  formControlName="firstname" [(ngModel)]=" usersModal.firstName" name ="firstName" /> 
+                <div *ngIf="submitted && f.firstname.errors" class="invalid-feedback">
+                    <div *ngIf="f.firstname.errors.required">*required</div>
+                    </div>
+            </div>
+            <div style=" font-family: 'Gotham'; " class='row-items'><label style=" font-family: 'Gotham'; " class= "items">User Last Name :</label><input type="text" [(ngModel)]=" usersModal.lastName"  formControlName="lastName" name ="lastName" /> 
+                <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                    <div *ngIf="f.lastName.errors.required">*required</div>
+                    </div>
+            </div>
+            <div style=" font-family: 'Gotham'; " class='row-items'><label style=" font-family: 'Gotham'; " class= "items">User Phone Number :</label><input type="text" [(ngModel)]=" usersModal.phoneNumber"  formControlName="phoneNumber" name ="phoneNumber">
+                <div *ngIf="submitted && f.phoneNumber.errors" class="invalid-feedback">
+                    <div *ngIf="f.phoneNumber.errors.required">*required</div>
+                    </div>
+            </div>
+            <div style=" font-family: 'Gotham'; " class='row-items'><label style=" font-family: 'Gotham'; " class= "items">User Email Address :</label><input type="email" [(ngModel)]=" usersModal.email"  formControlName="emailAddress" name ="email" >
+                <div *ngIf="submitted && f.emailAddress.errors" class="invalid-feedback">
+                    <div *ngIf="f.emailAddress.errors.required">*required</div>
+                    </div>
+            </div>
+            <div style=" font-family: 'Gotham'; " class='row-items'><label style=" font-family: 'Gotham'; " class= "items">User Password :</label><input type="password" [(ngModel)]=" usersModal.password" formControlName="password"  name ="password"   >
+                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                    <div *ngIf="f.password.errors.required">*required</div>
+                    <div *ngIf="f.password.errors.minLength">*Password length must be greater than 6 </div>
+                    <div *ngIf="f.password.hasError('passwordStrength')">
+                      {{f.password.errors['passwordStrength']}}
+                    </div>
+                </div>
+            </div>
+            <div style=" font-family: 'Gotham'; " class='row-items'><label style=" font-family: 'Gotham'; " class= "items">Uesr Role:</label>
+                <select  id="vendorsnames" style="width: 40%;font-family: 'Gotham'" formControlName="role" name='role'[(ngModel)]=" usersModal.role">
+                    <option value="true"style="font-family: 'Gotham'">Admin</option>
+                    <option value="false"style="font-family: 'Gotham'">User</option>
+                  </select>
+                
+                <div *ngIf="submitted && f.role.errors" class="invalid-feedback">
+                    <div *ngIf="f.role.errors.required">*required</div>
+                    </div>
+            </div> 
+
+    </div> 
+
+    
+</form> 
+
+<div class="button"> 
+    <button  mat-raised-button style=" font-family: 'Gotham'; " (click)=createUser() type="submit"  >save</button>  
+
+    </div>

@@ -1,0 +1,29 @@
+<div class="page"   >
+
+  
+    <mat-card fxFlex="35" class="form"  >
+
+  
+      <div >   
+        <h1>Welcome Back!</h1>
+        <h2>worng</h2>
+        <form >
+  
+          <input placeholder="email" type="email" required [(ngModel)]="loginModel.emailAddress"  style="margin-bottom: 2%;"  name="username"/>
+          <input placeholder="password" type="password" required [(ngModel)]="loginModel.password"  name="password"/>
+          
+        <div  style = "margin-top: 3%; height:70%">
+        <button mat-button class="button button-block" (click)=onSubmit() style="margin-bottom: 5%; ">
+          <!-- <img *ngIf="isLoading" style="width : 24px" src="src\assets\imges\loading.gif" /> -->
+          Log In</button>
+      </div>
+        <p class="forgot"  style="float: right;"><a href="#" routerLink="/ForgetPassword">Forgot Password?</a></p>
+     
+        </form>
+  
+      </div>
+    </mat-card>
+  </div>
+  
+    
+  

@@ -1,0 +1,131 @@
+<div>
+  <button mat-raised-button  (click)='downloadePdf()' style="background:#05CBBF ; color: #ffffff; width:4cm;
+    border-radius: 5px; position:revert; font-family: 'Gotham '; box-shadow: none;float: right;     margin-right: 2%;">
+  Downlade PDF 
+    </button> 
+</div>
+<div id="content">
+<div class="row px-80" style="margin-top: 20px; margin-bottom: 2%;" >
+    <span class="component-title"  style="font-family: 'Gotham';">Purchase Order Status : {{purchaseOrderViewModel?.statusStr}}</span>
+    <!-- <label  style="font-family: Gotham; font-size: 12px; margin-left: 2%;">  {{purchaseOrderViewModel?.statusStr}}</label> -->
+    </div>
+
+<div class="cards" id="content" style="margin-bottom: 5%;">
+
+<mat-card class="card1" style="font-family: Gotham;">
+ 
+    <div class = "VI">
+    <div class="title" style="font-family: Gotham;">Vendor Information</div>
+    <div  class= "row-items"  style="font-family: 'Gotham';" ><label  style="font-family: Gotham;">Vendor Id:</label>{{purchaseOrderViewModel?.vendorId}}</div>
+    <div   class= "row-items" style="font-family: 'Gotham';" ><label  style="font-family: Gotham;">Vendor Name:</label>{{purchaseOrderViewModel?.vendorName}}</div>
+    <div  class= "row-items"  style="font-family: 'Gotham';"><label  style="font-family: Gotham;">Website:</label>{{purchaseOrderViewModel?.website}}</div>
+    <div  class= "row-items"  style="font-family: 'Gotham';"><label  style="font-family: Gotham;">Lead time:</label>{{purchaseOrderViewModel?.leadTime}}</div>
+    <div  class= "row-items"  style="font-family: 'Gotham';"><label  style="font-family: Gotham;">Payment Method:</label>{{purchaseOrderViewModel?.paymentMethod}}</div>
+    </div>
+
+    <div class = "VSI">
+    <div class="title" style="font-family: Gotham;"> Shipping Information</div>
+    <div  class= "row-items"  style="font-family: 'Gotham';"><label style="font-family: Gotham;">Shipping Address:</label><label class='label2'>{{purchaseOrderViewModel?.shippingAddress1}}</label> </div>
+    <div class= "row-items"  style="font-family: 'Gotham';" ><label style="font-family: Gotham;">Shipping Address 2:</label><label class='label2'>{{purchaseOrderViewModel?.shippingAddress2}}</label></div>
+    <div class= "row-items"  style="font-family: 'Gotham';" ><label style="font-family: Gotham;">Shipping City:</label><label class='label2'>{{purchaseOrderViewModel?.shippingCity}}</label></div>
+    <div class= "row-items"  style="font-family: Gotham;" ><label style="font-family: Gotham;">Shipping State:</label><label class='label2'>{{purchaseOrderViewModel?.shippingState}}</label></div>
+    <div class= "row-items"  style="font-family: Gotham;" ><label style="font-family: Gotham;">Shipping Country:</label><label class='label2'>{{purchaseOrderViewModel?.shippingCountry}}</label></div>
+    <div class= "row-items" style="font-family: Gotham;" ><label style="font-family:  'Gotham';">Shipping Zip:</label><label class='label2'>{{purchaseOrderViewModel?.shippingZipCode}}</label></div>
+
+    </div>
+
+</mat-card>
+
+<mat-card class="card2"  >
+    <div class="title" style="font-family:  'Gotham';">Receiving Information</div>
+    <div class= "row-items"><label style="font-family:  'Gotham';">Receiving Address:</label><label style="font-family:  'Gotham';" class='label2'>{{purchaseOrderViewModel?.receivingAddress1}}</label>
+    </div>
+    <div class= "row-items"><label  style="font-family: 'Gotham';">Receiving Address 2:</label> <label style="font-family:  'Gotham';" class='label2'>{{purchaseOrderViewModel?.receivingAddress2}}</label>
+    </div>
+    <div class= "row-items"><label style="font-family:  'Gotham';">Receiving City:</label> <label style="font-family:  'Gotham';"class='label2'>{{purchaseOrderViewModel?.receivingCity}}</label>
+    </div>
+    <div class= "row-items"><label style="font-family:  'Gotham';">Receiving State:</label> <label style="font-family:  'Gotham';" class='label2'>{{purchaseOrderViewModel?.receivingState}}</label>
+    </div>
+    <div class= "row-items"><label style="font-family:  'Gotham';">Receiving Country:</label> <label style="font-family:  'Gotham';"class='label2'>{{purchaseOrderViewModel?.receivingCountry}}</label>
+    </div>
+    <div class= "row-items"><label style="font-family:  'Gotham';">Receiving Zip:</label> <label style="font-family:  'Gotham';"class='label2'>{{purchaseOrderViewModel?.receivingZip}}</label>
+    </div>
+  
+</mat-card>
+
+  </div>
+  
+
+  <div class="row px-80" style="height: 25%; margin-bottom: 3%;"   >
+    <table mat-table matTableExporter [dataSource]="dataSource"  #exporter="matTableExporter" class="table table-hover">
+      <!-- <ng-container matColumnDef="chked">
+        <th mat-header-cell *matHeaderCellDef class="mt-tbl mt-tbl-th mt-tbl-chked">
+              <mat-checkbox  onclick="alert('df')"></mat-checkbox>
+          </th>
+           <td mat-cell *matCellDef="let element" class="mt-tbl mt-tbl-td mt-tbl-chked" > 
+            <mat-checkbox ></mat-checkbox>
+          </td>
+        </ng-container> -->
+      <ng-container style="font-family:  'Gotham';"matColumnDef="SKU">
+        <th mat-header-cell *matHeaderCellDef style="font-family:  'Gotham';" class="mt-tbl mt-tbl-th mt-tbl-sku" style="font-family:  'Gotham';">SKU#</th>
+        <td mat-cell *matCellDef="let element"style="font-family:  'Gotham';" class="mt-tbl mt-tbl-td mt-tbl-sku" style="font-family:  'Gotham';" > {{element.sku}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="PRODCUTNAME">
+        <th mat-header-cell *matHeaderCellDef style="font-family:  'Gotham';"class="mt-tbl mt-tbl-th mt-tbl-fname" style="font-family:  'Gotham' Book;">PRODCUT NAME</th>
+        <td mat-cell *matCellDef="let element" style="font-family:  'Gotham';"class="mt-tbl mt-tbl-td mt-tbl-fname" style="font-family:  'Gotham';"> {{element.productName}} </td>
+      </ng-container>
+  
+
+      <ng-container matColumnDef="UNITCOST">
+        <th mat-header-cell *matHeaderCellDef style="font-family:  'Gotham';"class="mt-tbl mt-tbl-th mt-tbl-COST" style="font-family:  'Gotham';align-items: center; text-align: center">UNIT COST</th>
+        <td mat-cell *matCellDef="let element" style="font-family:  'Gotham';"class="mt-tbl mt-tbl-td mt-tbl-COST" style="font-family:  'Gotham'; text-align: center"> {{element.unitCost}} </td>
+      </ng-container>
+  
+  
+     <ng-container matColumnDef="QUANTITY">
+        <th mat-header-cell *matHeaderCellDef class="mt-tbl mt-tbl-th mt-tbl-QUANTITY" style="font-family:  'Gotham' ;text-align: center">QUANTITY</th>
+        <td mat-cell *matCellDef="let element" class="mt-tbl mt-tbl-td mt-tbl-QUANTITY" style="font-family:  'Gotham'; text-align: center" > {{element.avalibaleQuantity}}</td>
+      </ng-container>
+  
+  
+      <ng-container matColumnDef="TotalCost">
+        <th mat-header-cell *matHeaderCellDef class="mt-tbl mt-tbl-th mt-tbl-time" style="font-family:  'Gotham'; text-align: center">TOTAL COST</th>
+        <td mat-cell *matCellDef="let element" class="mt-tbl mt-tbl-td mt-tbl-time" style="font-family:  'Gotham'; color: #1fb928; text-align: center" > {{element.totalCost}} </td>
+      </ng-container>
+  
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        
+    </table>
+  </div>
+  <!-- <div class="row px-80">
+    <mat-paginator [pageSizeOptions]="[5]" showFirstLastButtons></mat-paginator>
+  </div> -->
+
+  
+<div class="results" >
+
+
+  <mat-card class = "result1"style="font-family:  'Gotham';" >
+    <div class=res-edit1 style="font-family: Gotham;" ></div>
+      <div class="title" style="font-family: Gotham;" >Notes to Vendor</div>
+      <label class='label2' style="font-family: Gotham;" >{{purchaseOrderViewModel?.notesToVendor}}</label>
+  <div>
+  </div>    
+          </mat-card>
+          <mat-card class = "result2" style="font-family: Gotham;" >
+            
+              <div class= "row-items"><label style="font-family: Gotham;" >Sub cost:</label><label class='label2' style="font-family: Gotham;" >{{purchaseOrderViewModel?.subCost}}</label>
+              </div>
+              <div class= "row-items"><label style="font-family: Gotham;" >Tax:</label> <label class='label2' style="font-family: Gotham;" >{{purchaseOrderViewModel?.tax}}</label>
+              </div>
+              <div class= "row-items"><label style="font-family: Gotham;" >Total Cost:</label><label class='label2' style="font-family: Gotham;" >{{purchaseOrderViewModel?.totalCost}}</label>
+              </div>
+
+          </mat-card>
+
+
+</div>
+</div>

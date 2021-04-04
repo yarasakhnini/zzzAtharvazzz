@@ -1,0 +1,80 @@
+<body>
+  
+    <div calss="modale">
+       
+        <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+        <div class="product">
+            <div> <h1 class= "Title" style="font-family: 'Gotham'" >Vendor Information</h1></div>
+           
+            <div class='row-items'><label style="font-family: 'Gotham'"  class= "items">Vendor Code:</label><input style="font-family: 'Gotham'" class="vEmail" type="text" name ="VendorNumber" [(ngModel)]="VendorModal.vendorCode" > </div>
+                <div class='row-items'><label style="font-family: 'Gotham'" class= "items">Vendor Name:</label><input style="font-family: 'Gotham'" class="prductName" type="text" name ="VendorName" [(ngModel)]="VendorModal.vendorName"  > </div>
+                <div class='row-items'><label style="font-family: 'Gotham'" class= "items">Vendor Email Template</label>
+                    <select style="width: 52%;" style="font-family: 'Gotham'"  class="inputx" [(ngModel)]="VendorModal.emailTemplateId" >
+                        <option *ngFor="let Item of emailTemplate" style="font-family: 'Gotham'" [value]="Item.id" >{{Item.templateName}}</option>
+                     </select>
+                </div>
+                <div class='row-items'><label style="font-family: 'Gotham'" class= "items">Website:</label><input style="font-family: 'Gotham'"  class="ProductLeadTime:" type="text" name ="Website"  [(ngModel)]="VendorModal.website" ></div>
+                <div class='row-items'><label style="font-family: 'Gotham'" class= "items">Lead time:</label><input style="font-family: 'Gotham'" class="ProductLeadTime:" type="text" name ="ProductLeadTime"  [(ngModel)]="VendorModal.leadTime" ></div>
+                <div class='row-items'><label style="font-family: 'Gotham'" class= "items">Payment Method:</label>
+                    <select id="Paymentname" style="width: 52%;" style="font-family: 'Gotham'"  class="inputx" [(ngModel)]="VendorModal.paymentMethodId">
+                        <option *ngFor="let Item of paymentmethodmodel" style="font-family: 'Gotham'"  [value]="Item.id"  >{{Item.paymentMethodName}}</option>
+                        </select>
+                   
+                </div>
+
+        </div> 
+
+        
+
+        <div class="vendor">
+            <div ><h1 class= "Title" style="font-family: 'Gotham'" >Vendor Shipping Information</h1></div>
+            <div class='row-items'><label class= "items" style="font-family: 'Gotham'" >Shipping Method:</label>
+                <select style="width: 52%;" style="font-family: 'Gotham'"  [(ngModel)]="VendorModal.shippingMethodId">
+                    <option *ngFor="let Item of shippingmethodmodel" style="font-family: 'Gotham'" [value]="Item.id" >{{Item.shippingMethodName}}</option>
+                 </select>
+            </div>
+            <div class='row-items'><label class= "items" style="font-family: 'Gotham'" >Shipping Address 1:</label><input style="font-family: 'Gotham'"  class="IsFBAdirect" type="text" name ="ShippingAddress" [(ngModel)]="VendorModal.shippingAddress1"> </div>
+            <div class='row-items'><label class= "items" style="font-family: 'Gotham'" >Shipping Address 2: </label><input style="font-family: 'Gotham'"  class="Vendorname" type="text" name ="ShippingAddress2" [(ngModel)]="VendorModal.shippingAddress2"></div>
+            <div class='row-items'><label class= "items" style="font-family: 'Gotham'" >Shipping City:</label> <input style="font-family: 'Gotham'" class="Vendorpartnumber" type="text" name ="ShippingCity"[(ngModel)]="VendorModal.shippingCity"></div>
+            <div class='row-items'><label class= "items" style="font-family: 'Gotham'" >Shipping State</label> <input style="font-family: 'Gotham'" class="Vendorname" type="text" name ="ShippingState"[(ngModel)]="VendorModal.shippingState"> </div>
+            <div class='row-items'><label class= "items" style="font-family: 'Gotham'" >Shipping Country:</label><input style="font-family: 'Gotham'" class="Vendorcode" type="text" name ="ShippingCountry"[(ngModel)]="VendorModal.shippingCountry"> </div>
+            <div class='row-items'><label class= "items" style="font-family: 'Gotham'" >Shipping Zip:</label> <input style="font-family: 'Gotham'"  class="BINnumber" type="text" name ="ShippingZip"[(ngModel)]="VendorModal.shippingZip"> </div>
+                </div> 
+              
+                <mat-divider style="margin-top: 2%; margin-bottom:2% ;"></mat-divider>
+                
+
+        <div class="caseDetails">
+        <div class='row-items'><h1 style="font-family: 'Gotham'" class= "Title">Vendor Contact Information</h1></div>
+        <div class='row-items'><label style="font-family: 'Gotham'" class= "items">Contact First Name:</label><input style="font-family: 'Gotham'" class="CaseHight" type="text" name ="ContactFirstName"[(ngModel)]="VendorModal.contactFirstName"> </div>
+        <div class='row-items'><label style="font-family: 'Gotham'" class= "items">Contact Last Name:</label><input style="font-family: 'Gotham'" class="CaseHight" type="text" name ="ContactLastName"[(ngModel)]="VendorModal.contactLastName"> </div>
+        <div class='row-items'> <label style="font-family: 'Gotham'" class= "items">Email Address:</label><input style="font-family: 'Gotham'" class="CaseHight" type="text" name ="ContactEmailAdress"[(ngModel)]="VendorModal.emailAddress"></div>
+        <div class='row-items'> <label style="font-family: 'Gotham'" class= "items">Praimary Phone Number: </label><input style="font-family: 'Gotham'" class="CaseWight" type="text" name ="ContactPhoneNumber"[(ngModel)]="VendorModal.praimaryPhoneNumber"></div>
+        <div class='row-items'><label style="font-family: 'Gotham'" class= "items">Secondary Phone Number: </label><input style="font-family: 'Gotham'" class="CaseUnitQuantity" type="text" name ="phone" [(ngModel)]="VendorModal.secondryPhoneNumber"> </div>
+        <div class='row-items'><label style="font-family: 'Gotham'" class= "items">Fax Number:</label> <input style="font-family: 'Gotham'" class="CaseUnitQuantity" type="text" name ="FaxNumber" [(ngModel)]="VendorModal.faxNumber"> </div>
+
+    </div> 
+
+  
+
+        <div class="Item">
+            <div><h1 class= "Title"style="font-family: 'Gotham'" >Vendor Billing Information</h1></div>
+            <div class='row-items'> <label style="font-family: 'Gotham'"  class= "items">Billing Address 1:</label><input style="font-family: 'Gotham'" class="ItemHight" type="text" name ="BillingAddress"  [(ngModel)]="VendorModal.billingAddress1"> </div>
+            <div class='row-items'> <label style="font-family: 'Gotham'" class= "items">Billing Address 2:</label> <input style="font-family: 'Gotham'" class="ItemWidth" type="text" name ="BillingAddress2" [(ngModel)]="VendorModal.billingAddress2"> </div>
+            <div class='row-items'> <label style="font-family: 'Gotham'" class= "items">Billing City: </label><input style="font-family: 'Gotham'" class="ItemLength" type="text" name ="BillingCity" [(ngModel)]="VendorModal.billingCity"> </div>
+            <div class='row-items'> <label style="font-family: 'Gotham'" class= "items">Billing State:</label> <input style="font-family: 'Gotham'" class="ItemWight" type="text" name ="BillingState" [(ngModel)]="VendorModal.billingState"> </div>
+            <div class='row-items'> <label style="font-family: 'Gotham'" class= "items">Billing Country: </label><input style="font-family: 'Gotham'" class="Oversizeitem" type="text" name ="BillingCountry"  [(ngModel)]="VendorModal.billingCountry"></div>
+
+        </div> 
+          
+    
+        </form>
+        
+        <div class="button"> 
+            <button  mat-raised-button  style="font-family: 'Gotham'"  [mat-dialog-close]="true" (click)=onSubmit() >save</button>  
+            </div>
+    </div>
+
+  
+
+    </body>

@@ -1,0 +1,76 @@
+<div class="row px-80" style="margin-top: 20px;">
+    
+    <span class="component-title">API Key</span>
+    </div>
+
+
+
+
+<mat-card class = "wendo1" >
+  <button class=edit1 mat-button>Edit</button>
+  <div class ="info">
+    <div class = "VI">
+    <div class="title" >Zentail:</div>
+    <div><label>API Key:</label></div>
+    </div>
+  </div>
+    </mat-card>
+  
+
+
+
+  <div class="row px-80">
+    <button mat-raised-button	 class="m-1"style="background:#05CBBF ;color: #ffffff;width:4cm;
+    border-radius: 5px; box-shadow: none;     margin-left: 3%;" >
+       Actions
+    </button>
+    
+  <div class="row px-80" style="height: 25%;">
+    <table mat-table [dataSource]="dataSource" class="table table-hover">
+      <ng-container matColumnDef="chked">
+        <th mat-header-cell *matHeaderCellDef class="mt-tbl mt-tbl-th mt-tbl-chked">
+              <mat-checkbox  onclick="alert('df')"></mat-checkbox>
+          </th>
+           <td mat-cell *matCellDef="let element" class="mt-tbl mt-tbl-td mt-tbl-chked" > 
+            <mat-checkbox ></mat-checkbox>
+          </td>
+        </ng-container>
+      <ng-container matColumnDef="USERID">
+        <th mat-header-cell *matHeaderCellDef class="mt-tbl mt-tbl-th mt-tbl-userid">USER ID</th>
+        <td mat-cell *matCellDef="let element" class="mt-tbl mt-tbl-td mt-tbl-userid"> {{element.USERID}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="FIRSTNAME">
+        <th mat-header-cell *matHeaderCellDef class="mt-tbl mt-tbl-th mt-tbl-userid">FIRST NAME</th>
+        <td mat-cell *matCellDef="let element" class="mt-tbl mt-tbl-td mt-tbl-userid"> {{element.FIRSTNAME}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="LASTNAME">
+        <th mat-header-cell *matHeaderCellDef class="mt-tbl mt-tbl-th mt-tbl-userid">LAST NAME</th>
+        <td mat-cell *matCellDef="let element" class="mt-tbl mt-tbl-td mt-tbl-userid"> {{element.LASTNAME}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="PHONE">
+        <th mat-header-cell *matHeaderCellDef class="mt-tbl mt-tbl-th mt-tbl-userid">PHONE</th>
+        <td mat-cell *matCellDef="let element" class="mt-tbl mt-tbl-td mt-tbl-userid"> {{element.PHONE}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="EMAIL">
+        <th mat-header-cell *matHeaderCellDef class="mt-tbl mt-tbl-th mt-tbl-userid">EMAIL</th>
+        <td mat-cell *matCellDef="let element" class="mt-tbl mt-tbl-td mt-tbl-userid"> {{element.EMAIL}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="STATUS">
+        <th mat-header-cell *matHeaderCellDef class="mt-tbl mt-tbl-th mt-tbl-userid">STATUS</th>
+        <td mat-cell *matCellDef="let element" class="mt-tbl mt-tbl-td mt-tbl-userid"> {{element.STATUS}} </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        
+    </table>
+
+  <div class="row px-80">
+    <mat-paginator [pageSizeOptions]="[10]" showFirstLastButtons></mat-paginator>
+  </div>
+</div>
+  </div>

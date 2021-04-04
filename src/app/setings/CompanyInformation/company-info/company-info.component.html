@@ -1,0 +1,99 @@
+<div class="row px-80" style="margin-top: 20px; margin-bottom: 27px; ">
+    
+    <span  style=" font-family: Gotham; " class="component-title">Company Information</span>
+    </div>
+
+
+
+<div style=" font-family: Gotham; " class = 'windows'>
+<mat-card class = "window1" style="float: left; font-family: Gotham;">
+    <div class="title" style=" font-family: Gotham; ">Company Information</div>
+    <div style=" font-family: Gotham; " class="info">
+    <div style=" font-family: Gotham; "class= "row-items"><label style=" font-family: Gotham; " >Company Name:</label>{{companyinfo?.businessName}}</div>
+    <div style=" font-family: Gotham; "class= "row-items"><label style=" font-family: Gotham; ">Address Line 1: </label>{{companyinfo?.addressLine1}}</div>
+    <div style=" font-family: Gotham; "class= "row-items"><label style=" font-family: Gotham; ">City:</label>{{companyinfo?.city}}</div>
+    <div style=" font-family: Gotham; "class= "row-items"><label style=" font-family: Gotham; ">State:</label>{{companyinfo?.state}}</div>
+    <div style=" font-family: Gotham; "class= "row-items"><label style=" font-family: Gotham; ">Zip:</label>{{companyinfo?.zipCode}}</div>
+    <div style=" font-family: Gotham; "class= "row-items"><label style=" font-family: Gotham; ">Country:</label>{{companyinfo?.country}}</div>
+  </div>
+  </mat-card>
+  </div>
+
+  <div class="row px-80">
+    
+    <div class="m-1" style="padding-left: 2%;">
+    <button mat-raised-button	 (click)=' onCreat()' style="background:#05CBBF ;color: #ffffff;
+    border-radius: 5px; box-shadow: none;     font-family: Gotham;  margin-left: 3%;" >
+        Add Payment Method
+    </button>
+  </div>
+  <div class="row px-80" style="height: 25%; font-family: Gotham;">
+    <table mat-table [dataSource]="dataSource1" class="table table-hover">
+      <ng-container matColumnDef="chked">
+        <th mat-header-cell *matHeaderCellDef class="mt-tbl mt-tbl-th mt-tbl-chked">
+              <mat-checkbox  onclick="alert('df')"></mat-checkbox>
+          </th>
+           <td mat-cell *matCellDef="let element" class="mt-tbl mt-tbl-td mt-tbl-chked" > 
+            <mat-checkbox ></mat-checkbox>
+          </td>
+        </ng-container>
+      <ng-container matColumnDef="Payment-METHOD-NAME">
+        <th mat-header-cell *matHeaderCellDef  style=" font-family: Gotham; "class="mt-tbl mt-tbl-th mt-tbl-userid">PAYMENT METHOD NAME</th>
+        <td mat-cell *matCellDef="let element" style=" font-family: 'Gotham'; "class="mt-tbl mt-tbl-td mt-tbl-userid"> {{element.paymentMethodName}} </td>
+      </ng-container>
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef class="mt-tbl mt-tbl-th mt-tbl-Action" style="text-align: center; font-family: 'Gotham'; ">Actions</th>
+        <td mat-cell *matCellDef="let element" class="mt-tbl mt-tbl-td mt-tbl-lname">
+       
+          <button mat-icon-button (click)="DeletePaymentMETHOD(element.id)"><mat-icon>delete</mat-icon></button>
+       
+      </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns2"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns2;"></tr>
+        
+    </table>
+
+  <div class="row px-80">
+    <mat-paginator #paginator1  [pageSize]="3" [pageSizeOptions]="[6, 9, 12]" ></mat-paginator>
+  </div>
+</div>
+
+<div class="m-1" style="padding-left: 2%;">
+  <button mat-raised-button	 (click)=' onchange()' style="background:#05CBBF ;color: #ffffff;
+  border-radius: 5px; box-shadow: none;     margin-left: 3%;" >
+      Add Shipping Method
+  </button>
+</div>
+<div class="row px-80" style="height: 25%;">
+  <table mat-table [dataSource]="dataSource2" class="table table-hover">
+    <ng-container matColumnDef="chked">
+      <th mat-header-cell *matHeaderCellDef class="mt-tbl mt-tbl-th mt-tbl-chked">
+            <mat-checkbox ></mat-checkbox>
+        </th>
+         <td mat-cell *matCellDef="let element" class="mt-tbl mt-tbl-td mt-tbl-chked" > 
+          <mat-checkbox ></mat-checkbox>
+        </td>
+      </ng-container>
+    <ng-container matColumnDef="SHIPPING-METHOD-NAME">
+      <th mat-header-cell *matHeaderCellDef style=" font-family: 'Gotham'; " class="mt-tbl mt-tbl-th mt-tbl-userid">SHIPPING METHOD NAME</th>
+      <td mat-cell *matCellDef="let element" style=" font-family: 'Gotham'; " class="mt-tbl mt-tbl-td mt-tbl-userid"> {{element.shippingMethodName}} </td>
+    </ng-container>
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef style=" font-family: 'Gotham'; " class="mt-tbl mt-tbl-th mt-tbl-Action" style="text-align: center;">Actions</th>
+      <td mat-cell *matCellDef="let element" style=" font-family: 'Gotham'; " class="mt-tbl mt-tbl-td mt-tbl-lname">
+     
+        <button mat-icon-button (click)="DeleteShippingMETHOD(element.id)"><mat-icon >delete</mat-icon></button>
+     
+    </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      
+  </table>
+
+<div class="row px-80">
+  <mat-paginator #paginator2  [pageSize]="3" [pageSizeOptions]="[6, 9, 12]" ></mat-paginator>
+</div>
+</div>
+  </div>

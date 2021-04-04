@@ -1,0 +1,66 @@
+<mat-form-field class="example-full-width search-input">
+  
+  <input (keyup)="applayFilter($event.target.value)" matInput placeholder="Search">
+</mat-form-field>
+
+<div class="row px-80"style="height: 25%; " >
+    <table mat-table [dataSource]="productModel" class="table table-hover">
+      <ng-container matColumnDef="chked">
+        <th mat-header-cell *matHeaderCellDef class="mt-tbl mt-tbl-th mt-tbl-chked">
+              <mat-checkbox  onclick="alert('df')"></mat-checkbox>
+          </th>
+           <td mat-cell *matCellDef="let element" class="mt-tbl mt-tbl-td mt-tbl-chked" > 
+            <mat-checkbox ></mat-checkbox>
+          </td>
+        </ng-container>
+      <ng-container style="font-family: 'Gotham'" matColumnDef="sku#">
+        <th mat-header-cell *matHeaderCellDef style="font-family: 'Gotham'"class="mt-tbl mt-tbl-th mt-tbl-userid">SKU#</th>
+        <td mat-cell *matCellDef="let element"style="font-family: 'Gotham'" class="mt-tbl mt-tbl-td mt-tbl-userid"> {{element.sku}} </td>
+       
+      </ng-container>
+     
+      <ng-container  matColumnDef="productName">
+        <th mat-header-cell *matHeaderCellDef style="font-family: 'Gotham'"class="mt-tbl mt-tbl-th mt-tbl-fname">PRODCUT NAME</th>
+        <td mat-cell *matCellDef="let element"style="font-family: 'Gotham'" class="mt-tbl mt-tbl-td mt-tbl-fname"> {{element.productName}} </td>
+      </ng-container>
+  
+  
+      <ng-container matColumnDef="poDate">
+        <th mat-header-cell style="font-family: 'Gotham'" *matHeaderCellDef class="mt-tbl mt-tbl-th mt-tbl-date">PO DATE</th>
+        <td mat-cell style="font-family: 'Gotham'"*matCellDef="let element" class="mt-tbl mt-tbl-td mt-tbl-date"> {{element.productLeadTime}} </td>
+      </ng-container>
+      <ng-container matColumnDef="unitCost">
+        <th mat-header-cell style="font-family: 'Gotham'" *matHeaderCellDef class="mt-tbl mt-tbl-th mt-tbl-cost">UNIT COST</th>
+        <td mat-cell style="font-family: 'Gotham'"*matCellDef="let element" class="mt-tbl mt-tbl-td mt-tbl-cost"> {{element.unitCost}} </td>
+      </ng-container>
+  
+  
+     <ng-container matColumnDef="qunitity">
+        <th mat-header-cell style="font-family: 'Gotham'" *matHeaderCellDef class="mt-tbl mt-tbl-th mt-tbl-quntiti">QUANTITY</th>
+        <td mat-cell style="font-family: 'Gotham'"*matCellDef="let element" class="mt-tbl mt-tbl-td mt-tbl-quntiti"> 
+          <input style="width: 20%;" style="font-family: 'Gotham'" [(ngModel)]="element.avalibaleQuantity"  >   
+
+          <!-- {{element.avalibaleQuantity}} -->
+        </td>
+      </ng-container>
+  
+  
+      <ng-container matColumnDef="totalCost">
+        <th mat-header-cell style="font-family: 'Gotham'"*matHeaderCellDef class="mt-tbl mt-tbl-th mt-tbl-time">TOTAL COST</th>
+        <td mat-cell style="font-family: 'Gotham'"*matCellDef="let element" class="mt-tbl mt-tbl-td mt-tbl-time"  style="color: #1fb928;"> {{element.unitCost * element.avalibaleQuantity }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="button" >
+      <th mat-header-cell  *matHeaderCellDef  ></th>
+    <td mat-cell style="font-family: 'Gotham'" *matCellDef="let element"class="mt-tbl mt-tbl-td mt-tbl-button" style="background-color: #ffffff;" ><button mat-raised-button	style=" box-shadow: none;" class="m-1" (click)="selectedAddrow(element)"   [mat-dialog-close]="true">
+        Add Product
+        <mat-icon style="color:#05CBBF ;font-size: 13px; margin-top: 8%;" >add</mat-icon>
+      </button></td>
+    </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <div class="row px-80">
+      <mat-paginator [pageSizeOptions]="[5]" showFirstLastButtons></mat-paginator>
+    </div>
+  </div>

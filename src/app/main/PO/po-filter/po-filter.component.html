@@ -1,0 +1,42 @@
+
+<body>
+   <mat-nav-list>
+    <div class="POstatus" >
+     <div><h1>Purchase Order Status: </h1></div>  
+     <div><mat-checkbox style="font-family: 'Gotham'"class="example-margin">Canceled</mat-checkbox></div> 
+     <div><mat-checkbox style="font-family: 'Gotham'"class="example-margin">Submitted To Vendor</mat-checkbox></div> 
+     <div><mat-checkbox style="font-family: 'Gotham'"class="example-margin">Emailed</mat-checkbox></div> 
+     <div><mat-checkbox style="font-family: 'Gotham'"class="example-margin">Awaiting Receipt</mat-checkbox></div> 
+     <div><mat-checkbox style="font-family: 'Gotham'"class="example-margin">Closed</mat-checkbox></div> 
+     <div><mat-checkbox style="font-family: 'Gotham'"class="example-margin">Receiving</mat-checkbox></div> 
+     <div><mat-checkbox style="font-family: 'Gotham'"class="example-margin">Duplicate</mat-checkbox></div> 
+    
+    </div>
+     
+   
+  
+     <!-- <div class="Vendor">
+        <mat-divider class="line" ></mat-divider>
+     <div><h1 style="font-family: 'Gotham'">Vendor:</h1> </div> 
+     <label style="font-family: 'Gotham'"class="vendorN"  [matMenuTriggerFor]="menu" style="text-decoration: underline; ">Anthony Distributions</label>
+  
+    </div>
+    <mat-menu #menu="matMenu">
+      <label style="font-family: 'Gotham'"mat-menu-item >Atharva Wholsesale</label>
+      <label mat-menu-item>Amanda Hair Products</label>
+      <label mat-menu-item>Atari Distributions</label>
+      <label mat-menu-item>Andorra Coffee Beans</label>
+     
+    </mat-menu>   -->
+
+     <div class="Date">
+    <mat-divider class="line"></mat-divider>
+    <div><h1 style="font-family: 'Gotham'"> Purchase Order Date:</h1></div>
+    <div class="period"><input placeholder="from" style="padding-left: 2%;font-family: 'Gotham'"><input placeholder="to"></div>
+    <button class="periodB"mat-raised-button style="margin-right: 2%; font-family: 'Gotham';margin-left: 7%;width: 40% ; margin-top: 6%; background-color:#05cbbf; color:white ">applay</button> 
+    <button mat-raised-button style=" margin-left: 3%;width: 40% ;  background-color:#05cbbf; color:white;font-family: 'Gotham' ">Reset</button>
+    </div>
+    
+
+</mat-nav-list>
+</body>

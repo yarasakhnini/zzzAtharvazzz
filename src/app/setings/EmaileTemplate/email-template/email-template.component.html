@@ -1,0 +1,61 @@
+    <div class="page"  >
+     
+        <div class="row px-80" style="margin-top: 20px;">
+          <span class="component-title">Email Template</span>
+        </div>
+        <div class="row px-80">
+          <button mat-raised-button	class="m-1" style=" font-family: 'Gotham'; border: #05CBBF solid 1px;color: #05CBBF; box-shadow: none;"(click)="onCreat()">
+            Add Vendor Email Template
+
+          </button>
+          
+          <button mat-raised-button	 [matMenuTriggerFor]="menu" class="m-1"style=" font-family: 'Gotham'; background:#05CBBF ;color: #ffffff;width:4cm;
+          border-radius: 5px; box-shadow: none;">
+            Actions <mat-icon style="color:#b8b4b4">keyboard_arrow_down</mat-icon></button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item style=" font-family: 'Gotham'; " (click)="RemoveSelection()">Delete Email Template</button>
+            <label mat-menu-item ><input type="file" ngf-select ng-model="new_files" (change)="onFileChange($event)" multiple style="display:none"/>Upload Email Template </label>
+            <button mat-menu-item style=" font-family: 'Gotham'; " (click)="exporter.exportTable('csv')" >Download Email Template</button>
+          </mat-menu>    
+          <mat-form-field class="example-full-width search-input">
+            <input (keyup)="applayFilter($event.target.value)" matInput placeholder="Search">
+          </mat-form-field>
+        </div>
+        <div class="row px-80">
+          <table mat-table matTableExporter [dataSource]="dataSource" #exporter="matTableExporter"  class="table table-hover" style="font-family: 'Gotham Book', 'Arial Narrow', Arial, sans-serif;">
+            <ng-container matColumnDef="chked">
+                <th mat-header-cell *matHeaderCellDef class="mt-tbl mt-tbl-th mt-tbl-chked">
+                    <mat-checkbox (change)="$event ? masterToggle() : null"
+                    [checked]="selection.hasValue() && isAllSelected()"
+                    [indeterminate]="selection.hasValue() && !isAllSelected()">
+                    </mat-checkbox>
+                </th>
+                <td mat-cell *matCellDef="let element" class="mt-tbl mt-tbl-td mt-tbl-chked"> 
+                    <mat-checkbox
+                    (click)="$event.stopPropagation()"
+                              (change)="$event ? selection.toggle(element) : null"
+                              [checked]="selection.isSelected(element)"
+                    ></mat-checkbox>
+                </td>
+            </ng-container>
+         
+            <ng-container matColumnDef="TemplateName">
+              <th mat-header-cell *matHeaderCellDef style=" font-family: 'Gotham'; "class="mt-tbl mt-tbl-th mt-tbl-fname">Template Name</th>
+              <td mat-cell *matCellDef="let element" style=" font-family: 'Gotham';"  class="mt-tbl mt-tbl-td mt-tbl-fname"(click)="selectedrow(element)"> {{element.templateName}} </td>
+            </ng-container>
+            <ng-container matColumnDef="Subject">
+              <th mat-header-cell *matHeaderCellDef style=" font-family: 'Gotham'; "class="mt-tbl mt-tbl-th mt-tbl-lname">Subject</th>
+              <td mat-cell *matCellDef="let element" style=" font-family: 'Gotham'; "  class="mt-tbl mt-tbl-td mt-tbl-lname"(click)="selectedrow(element)"> {{element.subject}} </td>
+            </ng-container>
+            
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            
+          </table>
+         
+        </div>
+        <div class="row px-80">
+          <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+        </div>
+        
+        </div>

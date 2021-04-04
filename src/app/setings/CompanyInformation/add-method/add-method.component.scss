@@ -1,0 +1,53 @@
+@font-face {
+    font-family: 'Gotham';
+    src: url(src\assets\GothamBookRegular.otf) format("opentype");
+    }
+.modaleTiltle{
+    h3{
+        color: #05CBBF ;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
+        font-family: Arial;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        text-align: center;
+        
+    }
+}
+.field-wrap{
+  
+    label{
+       color:  #707070;
+       font-size: 12px;
+       font-family: Arial;
+       font-weight: bold;
+       font-stretch: normal;
+       font-style: normal;
+       
+    }
+
+    input{
+    height: 40%;
+    width: 95%;
+    }
+    height: 40%;
+}
+
+
+button{
+    width: 35%;
+    background-color: #05CBBF;
+    color: white; 
+    box-shadow: none;
+    &:hover{
+        background:gray;
+    }
+ }
+
+
+
+    
+
+
+

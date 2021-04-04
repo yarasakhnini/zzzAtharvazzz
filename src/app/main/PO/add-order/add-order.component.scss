@@ -1,0 +1,164 @@
+@font-face {
+  font-family: 'Gotham';
+  src: url(src\assets\GothamBookRegular.otf) format("opentype");
+  }
+
+table {
+    width: 100%;
+    font-family: Gotham;
+
+  }
+
+.mt-tbl-chked{
+  width:50px;
+  font-family: Gotham;
+
+}
+
+.mt-tbl-time{
+  text-align: left;
+  font-family: Gotham;
+
+}
+.mt-tbl-userid{
+  text-align: left;
+  font-family: Gotham;
+
+}
+.mt-tbl-fname ,.mt-tbl-lname{
+  text-align: center;
+  font-family: Gotham;
+
+}
+.mt-tbl-date{
+  text-align: center;
+  font-family: Gotham;
+
+}
+.mt-tbl-cost{
+  text-align: center;
+  font-family: Gotham;
+
+}
+.mt-tbl-quntiti{
+  text-align: center;
+  font-family: Gotham;
+
+}
+.mt-tbl-button{
+  padding-left: 2%;
+  font-family: Gotham;
+
+}
+// .pt-3{
+//   padding-top: 3rem;
+// }
+// .mb-3{
+//   margin-bottom: 3rem;
+// }
+// .m-3{
+//   margin: 3rem!important;
+
+// }
+// .m-1{
+//   margin: 1rem;
+// }
+
+
+ mat-checkbox:checked{
+   background-color: #05CBBF;
+   font-family: Gotham;
+
+    
+  } 
+.search-input{
+  min-width: 300px;
+  margin-left: 5%;
+  font-family: Gotham;
+
+  //max-width: 600px;
+}
+.px-80{
+  padding-left: 3%;
+  padding-right: 3%;
+  font-family: Gotham;
+
+  // margin-right: 2%;
+
+}
+
+.mt-tbl-button{
+  button{
+
+    border: solid .5px #05cbbf ;
+    color: #05CBBF; 
+    font-family: Arial;
+  font-size: 13px;
+  font-family: Gotham;
+
+  color: #05cbbf;
+  }
+}
+.mat-row{
+  background: white;
+  font-family: Gotham;
+
+
+  &:hover{
+    background:#f5f5f5;
+    font-family: Gotham;
+
+  }
+}
+
+::ng-deep .mat-menu-panel {
+  padding: 0 10px!important;
+  font-family: Gotham;
+
+  width: 100%!important;
+}
+
+
+
+.example-container {
+  position: absolute;
+  font-family: Gotham;
+
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+td.mat-cell,th{
+  border-bottom: 0px;
+  font-family: Gotham;
+
+  border-bottom-width: 0px!important;
+  table tr:nth-child(odd) td{
+  background-color: #f2f2f2;}
+
+}
+table tr:nth-child(odd) td
+{
+  font-family: Gotham;
+
+  background-color: #f2f2f2;
+}
+
+
+
+// .px-80  {
+//   display: flex;
+//   align-items: center;
+//   justify-content: flex-end;
+//   height: 45px;
+//   padding-bottom: 16 px;
+//   flex-wrap: wrap-reverse;
+//   width: 100%;
+//   font-family: Calibri;
+//   color: #050101;
+//   font-size: 14px;
+// }
+
+

@@ -1,0 +1,90 @@
+@font-face {
+  font-family: 'Gotham';
+  src: url(src\assets\GothamBookRegular.otf) format("opentype");
+  }
+
+.Title {
+  font-family: Arial;
+  font-size: 100%;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.16;
+  text-align: left;
+  color: #3e525d;
+  clear: both;
+  display: inline-block;
+  margin-top: 2%;
+  margin-bottom: 0.5%;
+}
+  
+.product{
+  display: table-cell;
+  margin-top: 5%;
+
+   input,select {
+    border-radius: 5px;
+    border: solid 1px #000000;
+    background-color: #ffffff;
+  width: 31%;
+  margin-bottom: 1%;
+
+  }
+  label{
+    width: 40%;
+  }
+}
+
+.items {
+
+  font-family: Arial;
+  font-size: 12px;
+  font-style: normal;
+  line-height: 1.14;
+  letter-spacing: 0.21px;
+  color: #0e0f10;
+  
+}
+
+.row-items {
+   width: 100%;
+  display: flex;
+  flex-direction: row;
+
+}
+
+.Units{
+  display: table-cell;
+   margin-top: 5%;
+
+   input,select {
+     border-radius: 5px;
+     border: solid 1px #000000;
+     background-color: #ffffff;
+       width: 50%;
+       margin-bottom: 1%;
+
+     
+   }
+   label{
+   width: 50%;
+   }
+
+   .items
+   {
+      //  width: 100%;
+   }
+}
+
+.button{
+   margin-top: -4%;
+ button{
+  background-color: #05CBBF;
+  color: white; 
+  box-shadow: none;
+  width: 20%;
+  &:hover{
+      background:gray;
+  }
+}   
+}

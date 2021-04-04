@@ -1,0 +1,25 @@
+@font-face {
+  font-family: 'Gotham';
+  src: url(src\assets\GothamBookRegular.otf) format("opentype");
+  }
+
+.button{    margin-top: 21%;
+  margin-left: 29%;}
+  button{
+    // margin-top: -4%;
+
+   background-color: #05CBBF;
+   color: white; 
+   box-shadow: none;
+  //  width: 20%;
+   &:hover{
+       background:gray;
+   }
+}   
+
+select{
+  width: 35%;
+  border-radius: 5px;
+  list-style: armenian;
+}
+ 

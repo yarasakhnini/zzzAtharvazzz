@@ -1,0 +1,160 @@
+@font-face {
+  font-family: 'Gotham';
+  src: url(src\assets\GothamBookRegular.otf) format("opentype");
+  }
+table {
+    width: 100%;
+  }
+
+.mt-tbl-chked{
+  width:50px;
+}
+
+.mt-tbl-time{
+  text-align: left;
+}
+.mt-tbl-userid{
+  text-align: left;
+}
+.mt-tbl-fname ,.mt-tbl-lname{
+  text-align: center;
+}
+.m-1{
+  width: 10%;
+
+}
+.pt-3{
+  padding-top: 3rem;
+}
+.mb-3{
+  margin-bottom: 3rem;
+}
+.m-3{
+  margin: 3rem!important;
+
+}
+.m-1{
+  margin: 1rem;
+}
+
+.row-items {
+   display: flex;
+   flex-direction: row;
+  
+  }
+
+ mat-checkbox:checked{
+   background-color: #05CBBF;;
+    
+  } 
+.search-input{
+  float: right;
+  padding-right: 20vw;
+  min-width: 300px;
+  //max-width: 600px;
+}
+.px-80{
+  padding-left: 4%;
+  padding-right: 6%;
+  
+}
+.component-title
+{
+  padding-left: px;
+  width: 111px;
+  height: 27px;
+  font-family: Arial;
+  font-size: 24px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.17;
+  letter-spacing: 0.36px;
+  text-align: left;
+  color: #3e525d;
+  margin-bottom: 4%;
+}
+.mat-row{
+  background: white;
+
+  &:hover{
+    background:#c2b8b8;
+  }
+}
+
+.info{}
+// ::ng-deep .mat-menu-panel {
+//   padding: 0 10px!important;
+//   width: 100%!important;
+// }
+
+
+
+.example-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+td.mat-cell,th{
+  border-bottom: 0px;
+  border-bottom-width: 0px!important;
+}
+table tr:nth-child(odd) td
+{background-color: #f2f2f2;}
+
+
+  .window1 {
+    font-family: Gotham;
+    margin-top: 2%;
+    margin-left: 1%;
+    margin-right: 7%;
+   width: 40%;
+   margin-top: 0%;
+    box-shadow: 0 3px 6px 0 #00000029;
+    background-color: #ffffff;
+    display: inline-block;
+    margin-bottom: 2%;
+ }
+.windows{
+  font-family: Gotham;
+  //  justify-content: center;
+  // align-items: center;
+ padding-left: 5%;
+}
+
+
+ .info{
+  //width: 60%;
+  font-family: Gotham;
+ //display: table-cell;
+ //margin-right:20% ;
+
+ label{
+  width: 40%;
+  
+} }
+
+
+  .title{
+    font-family: Arial;
+   font-size: 14px;
+    font-weight: bold;
+   color: #3e525d;
+  }
+
+
+.px-80 mat-paginator {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 45px;
+  padding-bottom: 16 px;
+  flex-wrap: wrap-reverse;
+  width: 100%;
+  font-family: Calibri;
+  color: #050101;
+  font-size: 14px;
+}

@@ -1,0 +1,168 @@
+<div class="page">
+
+  <mat-card fxFlex="35" class="form">
+
+    <div>
+      <h1>Sign Up</h1>
+      <h2>please fill in this form to create an account!</h2>
+      <div [formGroup]="registerForm">
+
+        <div class="top-row">
+          <div class="field-wrap">
+            <label>
+              First Name<span class="req">*</span>
+            </label>
+            <input type="text" required autocomplete="off" [(ngModel)]="accountModel.firstName" formControlName="firstname" />
+            <div *ngIf="submitted && f.firstname.errors" class="invalid-feedback">
+            <div *ngIf="f.firstname.errors.required">*First Name is required</div>
+            </div>
+          </div>
+
+          <div class="field-wrap">
+            <label>
+              Last Name<span class="req">*</span>
+            </label>
+            <input type="text" required autocomplete="off" [(ngModel)]="accountModel.lastName" formControlName="lastName" />
+            <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+              <div *ngIf="f.lastName.errors.required">*Last Name is required</div>
+          </div>
+          </div>
+
+    
+        </div>
+        <div class="field-wrap">
+          <label>
+            Phone Number<span class="req">*</span>
+          </label>
+          <input type="text" required autocomplete="off" [(ngModel)]="accountModel.phoneNumber" formControlName="phoneNumber" />
+          <div *ngIf="submitted && f.phoneNumber.errors" class="invalid-feedback">
+            <div *ngIf="f.phoneNumber.errors.required">*Phone Number is required</div>
+        </div>
+        </div>
+
+        <div class="field-wrap">
+          <label>
+            Email Address<span class="req">*</span>
+          </label>
+          <input type="email" required autocomplete="off" [(ngModel)]="accountModel.emailAddress" formControlName="emailAddress" />
+          <div *ngIf="submitted && f.emailAddress.errors" class="invalid-feedback">
+            <div *ngIf="f.emailAddress.errors.required">*Email is required</div>
+            <div *ngIf="f.emailAddress.errors.email">*Email must be a valid email address</div>
+        </div>
+        </div>
+  
+
+      <div class="field-wrap">
+          <label>
+            Set A Password<span class="req">*</span>
+          </label>
+          <input type="password" required autocomplete="off" [(ngModel)]="accountModel.password" formControlName="password" /> 
+          <!-- <div *ngIf="ValidPassword(accountModel.password)&&ValidPassword2(accountModel.password)" style="color: red; font-size: 9px; text-align: left;">*password must have upper case letter </div> -->
+          <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required">*Password is required</div>
+            <div *ngIf="f.password.errors.minLength">*Password length must be greater than 6 </div>
+            <div *ngIf="f.password.hasError('passwordStrength')">
+              {{f.password.errors['passwordStrength']}}
+            </div>
+        </div>
+        </div>
+    
+        <div class="top-row">
+          <div class="field-wrap">
+            <label>
+              Business Name<span class="req">*</span>
+            </label>
+            <input type="text" required autocomplete="off" [(ngModel)]="accountModel.businessName"formControlName="businessName" />
+            <div *ngIf="submitted && f.businessName.errors" class="invalid-feedback">
+              <div *ngIf="f.businessName.errors.required">*business Name is required</div>
+          </div>
+          </div>
+
+          <div class="field-wrap">
+            <label>
+              Business Website<span class="req">*</span>
+            </label>
+            <input type="text" required autocomplete="off" [(ngModel)]="accountModel.businessWebsite"formControlName="businesswebsite" />
+            <div *ngIf="submitted && f.businesswebsite.errors" class="invalid-feedback">
+              <div *ngIf="f.businesswebsite.errors.required">*Business Website is required</div>
+              <div *ngIf="f.password.hasError('passwordStrength')"></div>
+
+              <!-- <div *ngIf="ValidWebsite(accountModel.businessWebsite)">*Business Website must be a valid Website </div> -->
+          </div>
+          </div>
+        </div>
+        <div class="top-row">
+          <div class="field-wrap">
+            <label>
+              Address Line1<span class="req">*</span>
+            </label>
+            <input type="text" required autocomplete="off" [(ngModel)]="accountModel.addressLine1"formControlName="addressLine1" />
+            <div *ngIf="submitted && f.addressLine1.errors" class="invalid-feedback">
+              <div *ngIf="f.addressLine1.errors.required">Address Line 1 is required</div>
+          </div>
+          </div>
+
+          <div class="field-wrap">
+            <label>
+              Address Line2<span class="req">*</span>
+            </label>
+            <input type="text" required autocomplete="off" [(ngModel)]="accountModel.addressline2" formControlName="addressLine2" />
+            <div *ngIf="submitted && f.addressLine2.errors" class="invalid-feedback">
+              <div *ngIf="f.addressLine2.errors.required">Address Line 2 is required</div>
+          </div>
+          </div>
+        </div>
+        <div class="top-row">
+          <div class="field-wrap">
+            <label>
+              State<span class="req">*</span>
+            </label>
+            <input type="text" required autocomplete="off" [(ngModel)]="accountModel.state" formControlName="state" />
+            <div *ngIf="submitted && f.state.errors" class="invalid-feedback">
+              <div *ngIf="f.state.errors.required">State is required</div>
+          </div>
+          </div>
+
+          <div class="field-wrap">
+            <label>
+              Zip Code<span class="req">*</span>
+            </label>
+            <input type="text" required autocomplete="off" [(ngModel)]="accountModel.zipCode" formControlName="zipCode" />
+            <div *ngIf="submitted && f.zipCode.errors" class="invalid-feedback">
+              <div *ngIf="f.zipCode.errors.required">Zip Code is required</div>
+          </div>
+          </div>
+        </div>
+        <div class="top-row">
+          <div class="field-wrap">
+            <label>
+              City<span class="req">*</span>
+            </label>
+            <input type="text" required autocomplete="off" [(ngModel)]="accountModel.city" formControlName="city" />
+            <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
+              <div *ngIf="f.city.errors.required">City is required</div>
+          </div>
+          </div>
+          <div class="field-wrap">
+            <label>
+              Country<span class="req">*</span>
+            </label>
+            <input type="text" required autocomplete="off" [(ngModel)]="accountModel.country" formControlName="country" />
+            <div *ngIf="submitted && f.country.errors" class="invalid-feedback">
+              <div *ngIf="f.country.errors.required">Country is required</div>
+          </div>
+          </div>
+        </div>  
+
+
+        <button type="submit" (click)=createAccount() class="button button-block">Get Started</button>
+     
+      </div>
+
+    </div>
+
+
+    <!-- </div>  -->
+  </mat-card>
+</div>
+<!-- /form -->

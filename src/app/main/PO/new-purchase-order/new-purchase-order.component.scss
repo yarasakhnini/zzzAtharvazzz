@@ -1,0 +1,309 @@
+@font-face {
+  font-family: 'Gotham';
+  src: url(src\assets\GothamBookRegular.otf) format("opentype");
+  }
+
+table {
+    width: 100%;
+  }
+
+.mt-tbl-chked{
+
+  width:50px;
+}
+
+.mt-tbl-time{
+  font-family: Gotham;
+  text-align: left;
+}
+.mt-tbl-userid{
+  font-family: Gotham;
+  text-align: left;
+}
+label{
+font-family: Gotham;
+}
+.mt-tbl-fname ,.mt-tbl-lname{
+  font-family: Gotham;
+  text-align: center;
+}
+.pt-3{
+  font-family: Gotham;
+  padding-top: 3rem;
+}
+.mb-3{
+  font-family: Gotham;
+  margin-bottom: 3rem;
+}
+.m-3{
+  font-family: Gotham;
+  margin: 3rem!important;
+
+}
+.m-1{
+  font-family: Gotham;
+  margin: 1rem;
+}
+
+ mat-checkbox:checked{
+   background-color: #05CBBF;;
+    font-family: Gotham;
+  } 
+.search-input{
+  font-family: Gotham;
+  float: right;
+  padding-right: 20vw;
+  min-width: 300px;
+  //max-width: 600px;
+}
+.px-80{
+  font-family: Gotham;
+  padding-left: 80px;
+  padding-right: 80px;
+  
+}
+.component-title
+{
+  font-family: Gotham;
+  padding-left: px;
+  width: 111px;
+  height: 27px;
+  font-size: 24px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.17;
+  letter-spacing: 0.36px;
+  text-align: left;
+  color: #3e525d;
+}
+.mat-row{
+  font-family: Gotham;
+  background: white;
+
+  &:hover{
+    font-family: Gotham;
+    background:#f5f5f5;
+  }
+}
+
+::ng-deep .mat-menu-panel {
+  padding: 0 10px!important;
+  width: 100%!important;
+}
+
+
+
+.example-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-family: Gotham;
+}
+
+td.mat-cell,th{
+  border-bottom: 0px;
+  border-bottom-width: 0px!important;
+  font-family: Gotham;
+}
+table tr:nth-child(odd) td
+{background-color: #f2f2f2;
+  font-family: Gotham;
+}
+
+
+.row-items {
+//  width: 100%;
+ display: flex;
+ flex-direction: row;
+
+}
+
+
+.cards{
+  font-family: Gotham;
+  //  justify-content: center;
+  // align-items: center;
+ padding-left: 5%;
+ margin-bottom: 3%;
+
+  
+ }
+
+
+  .card1 {
+    font-family: Gotham;
+
+   margin-left: 4%;
+   margin-right: 7%;
+  width: 40%;
+  //  padding:1% 10% 2% 1%;
+margin-top: 0%;
+   box-shadow: 0 3px 6px 0 #00000029;
+   background-color: #ffffff;
+   display: inline-block;
+   float: left;
+  .row-items{
+margin-bottom: 1%;
+   }
+  //  mat-card{
+  //   width: 100%;
+  // }
+  }
+
+ 
+ 
+ .card2 {
+  font-family: Gotham;
+  width: 30%;
+   margin-left: 4%;
+ margin-right: 7%;
+ //padding-top: 1%;
+//  padding-bottom: 1%;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+   background-color:  #ffffff;
+  display: inline-block;
+  input {
+    border-radius: 5px;
+    border: solid 1px #000000;
+    background-color: #ffffff;
+  width: 20%;
+  margin-bottom: 1%;
+
+  }
+  label{
+    width: 40%;
+    
+  }
+  
+
+}
+   .VI{
+     width: 20%;
+    font-family: Gotham;
+   display: table-cell;
+   //margin-right:20% ;
+
+   label{
+    width: 40%;
+    
+  }
+ }
+  .VSI {
+    width:20%;
+    font-family: Gotham;
+  display: table-cell;
+  label{
+    width: 100%;
+    
+  }
+ }
+
+  .title{
+    font-family: Gotham;
+   font-size: 14px;
+    font-weight: bold;
+   color: #3e525d;
+  }
+
+.results{ 
+  font-family: Gotham;
+  justify-content: center;
+  height: 30%;
+ align-items: center;
+ padding: 20px ;
+
+
+}
+.result1{
+  font-family: Gotham;
+  width:30%;
+  margin-left: 4%;
+  margin-right: 7%;
+  height: 30%;
+  // margin: 1% 1% 0.4% 5%;
+  
+  padding:1% 10% 2% 1%;
+  box-shadow: 0 3px 6px 0 #00000029;
+  background-color: #ffffff;
+  display: inline-block;
+  input {
+    border-radius: 5px;
+    border: solid 1px #7777773b;
+    background-color: #ffffff;
+  width: 100%;
+  margin-bottom: 1%;
+
+  }
+  label{
+    width: 40%;
+    
+  }
+ // float:left; /* add this */
+}
+.px-80 mat-paginator {
+  font-family: Gotham;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 45px;
+  padding-bottom: 16 px;
+  flex-wrap: wrap-reverse;
+  width: 100%;
+  color: #050101;
+  font-size: 14px;
+}
+
+.result2{
+  font-family: Gotham;
+  width: 30%;
+  margin-right: 0%;
+   height: 30%;
+    //margin:  10% 1% 0.4% 15%;
+   display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    color: #3e525d;
+    padding:1% 10% 2% 1%;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    background-color:  #ffffff;
+  //  float:right; /* add this */
+  input {
+    border-radius: 5px;
+    border: solid 1px #000000;
+    background-color: #ffffff;
+  width: 20%;
+  margin-bottom: 1%;
+
+  }
+  label{
+    width: 40%;
+    
+  }
+}
+
+.result2 label{
+  font-family: Gotham;
+  font-size: 13px;
+  font-weight: bold;
+ color: #3e525d;
+}
+
+.result1 button{
+  font-family: Gotham;
+  text-decoration-line: underline;
+  font-weight: bold;
+  //text-align: left;
+  color: #05cbbf;
+  float: right;
+ margin-right: -35%;
+ margin-top: -2%;
+}
+
+.invalid-feedback{
+  color: rgb(202, 21, 21);
+  font-size: 11px;
+}
+

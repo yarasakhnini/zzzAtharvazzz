@@ -1,0 +1,38 @@
+<div class='modale' style="height: 100%;">
+    <div class='modaleTiltle' style="    align-content: center;">
+        <h3 style=" font-family: 'Gotham'; ">Vendor Emaile Template</h3>
+    </div>
+    <div class="field-wrap">
+     <div> <label style=" font-family: 'Gotham'; ">
+           Name
+        </label></div>  
+        <!-- <label class="label2">{{emailTemplate.templateName}}</label> -->
+
+        <input style=" font-family: 'Gotham'; " name="name" [(ngModel)]="emailTemplate.templateName" type="text"/>
+      </div>
+
+      <div class="field-wrap">
+        <div> <label style=" font-family: 'Gotham'; ">
+          Subject
+        </label></div>
+        <!-- <label class="label2">{{emailTemplate?.subject}}</label> -->
+      <input name="subject" [(ngModel)]="emailTemplate.subject" type="text" required autocomplete="off" />
+      </div>
+        <div class="body">
+            <div><label style=" font-family: 'Gotham'; ">Body</label></div>
+             <div class='Format-hedder'>
+        <!-- <div  class= "text-format"> 
+         <button mat-raised-button><mat-icon > format_bold</mat-icon></button>
+         <button mat-raised-button><mat-icon> format_italic</mat-icon></button> 
+          <button mat-raised-button><mat-icon> format_underlined</mat-icon> </button>
+        </div> -->
+
+      </div>
+    <div ><textarea [(ngModel)]="emailTemplate.body" name="emailTemplate" rows="20">
+     
+    </textarea></div>
+    
+    
+    <button mat-raised-button [mat-dialog-close]="true" style=" font-family: 'Gotham'; " (click)=EditEmailTemplate()>Edit</button>
+    </div>
+</div>

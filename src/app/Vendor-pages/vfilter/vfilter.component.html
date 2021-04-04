@@ -1,0 +1,23 @@
+
+
+   <mat-nav-list>
+       <div class="vendor-time">
+        <div><h1>Vendor Lead Time:</h1></div>  
+        <div> <mat-checkbox type="checkbox" [(ngModel)]='vendorfillter.leadTime_1to2Days' (change)='FiltterValues()' class="example-margin">1 to 2 Days</mat-checkbox></div> 
+        <div>  <mat-checkbox type="checkbox" [(ngModel)]='vendorfillter.leadTime_3to5Days'(change)='FiltterValues()' class="example-margin">3 to 5 Days</mat-checkbox></div> 
+        <div>  <mat-checkbox type="checkbox" [(ngModel)]='vendorfillter.leadTime_moreThan5Days' (change)='FiltterValues()' class="example-margin">5+ Days</mat-checkbox></div> 
+        </div>
+        
+        <mat-divider ></mat-divider>
+     
+        <div class="vendor-pay">
+        <div>   <h1>Default Payment Method</h1> </div> 
+          <div><mat-checkbox type="checkbox" [(ngModel)]='vendorfillter.creditCard'(change)='FiltterValues()' class="example-margin">Credit Card</mat-checkbox></div> 
+        <div> <mat-checkbox type="checkbox" [(ngModel)]='vendorfillter.check' (change)='FiltterValues()' class="example-margin">Check</mat-checkbox></div> 
+         <div> <mat-checkbox type="checkbox" [(ngModel)]='vendorfillter.achTransfer' (change)='FiltterValues()' class="example-margin">ACH Transfer</mat-checkbox></div> 
+          </div>
+
+          
+        
+   </mat-nav-list>
+   

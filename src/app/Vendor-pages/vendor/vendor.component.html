@@ -1,0 +1,136 @@
+<div class="page" style="font-family: 'Gotham'" >
+<mat-drawer-container>
+ <mat-drawer mode="side" [opened]="sidebarOpen">
+
+  <mat-nav-list>
+    <div class="vendor-time">
+      <div><h1 style="font-family: 'Gotham'">Vendor Lead Time:</h1></div>  
+      <div> <mat-checkbox type="checkbox" class="example-margin" style="font-family: 'Gotham'" [(ngModel)]='vendorfillter.leadTime_1to2Days' (change)='FiltterValues()' class="example-margin">1 to 2 Days</mat-checkbox></div> 
+      <div>  <mat-checkbox type="checkbox" class="example-margin" style="font-family: 'Gotham'"[(ngModel)]='vendorfillter.leadTime_3to5Days'(change)='FiltterValues()' class="example-margin">3 to 5 Days</mat-checkbox></div> 
+      <div>  <mat-checkbox type="checkbox" class="example-margin"  style="font-family: 'Gotham'"[(ngModel)]='vendorfillter.leadTime_moreThan5Days' (change)='FiltterValues()' class="example-margin">5+ Days</mat-checkbox></div> 
+      </div>
+      
+      <mat-divider ></mat-divider>
+   
+      <div class="vendor-pay">
+      <div>   <h1>Default Payment Method</h1> </div> 
+        <div><mat-checkbox type="checkbox" class="example-margin"  style="font-family: 'Gotham'" [(ngModel)]='vendorfillter.creditCard'(change)='FiltterValues()' class="example-margin">Credit Card</mat-checkbox></div> 
+      <div> <mat-checkbox type="checkbox" class="example-margin"  style="font-family: 'Gotham'" [(ngModel)]='vendorfillter.check' (change)='FiltterValues()' class="example-margin">Check</mat-checkbox></div> 
+       <div> <mat-checkbox type="checkbox" class="example-margin"  style="font-family: 'Gotham'" [(ngModel)]='vendorfillter.achTransfer' (change)='FiltterValues()' class="example-margin">ACH Transfer</mat-checkbox></div> 
+        </div>
+     
+     
+</mat-nav-list>
+
+
+<div class="close-button" >
+  <button mat-button (click)="togglesidbar()">
+    <mat-icon style=" color: #def3ff">keyboard_arrow_left</mat-icon>
+    Collapse Menu
+   
+  </button>
+</div>
+  </mat-drawer>
+  <mat-drawer-content>
+
+  <div class="row px-80" style="margin-top: 20px;">
+  
+  <span class="component-title" style="font-family: 'Gotham'" >Vendors</span>
+</div>
+
+<div class="row px-80">
+
+<button mat-raised-button	 class="m-1"style="border: #05CBBF solid 1px;color: #05CBBF; font-family: 'Gotham' ;box-shadow: none;" (click)="togglesidbar()">
+    Filter
+    <mat-icon style="color:#05CBBF">filter_alt</mat-icon>
+  </button>
+  <!-- <button mat-raised-button	 class="m-1"style="border: #05CBBF solid 1px;color: #05CBBF;" (click)="dataapi()">
+    API</button>
+   -->
+  <button mat-raised-button	 [matMenuTriggerFor]="menu" class="m-1" style="background:#05CBBF ; box-shadow: none;color: #ffffff;width:4cm;
+  border-radius: 5px; font-family: 'Gotham'" >
+    Actions
+    <mat-icon style="color:#c4c4c4">keyboard_arrow_down</mat-icon>
+  </button>
+  
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="onCreat()" style="font-family: 'Gotham'" >Add Vendor </button>
+    <label mat-menu-item style="font-family: 'Gotham'"  ><input type="file" ngf-select ng-model="new_files" (change)="onFileChange($event)" multiple style="display:none ;font-family: 'Gotham'"/>Upload Vendors </label>
+    <button mat-menu-item (click)="exporter.exportTable('csv')" style="font-family: 'Gotham'" >Download Vendors</button>
+  </mat-menu> 
+  <button mat-raised-button class="m-1" (click)="ExcelTemplete()" style="background:#05CBBF ; color: #ffffff; width:6cm;
+  border-radius: 5px; position:revert; font-family: 'Gotham '; box-shadow: none; ">Downloade Excel Templete</button>  
+  <mat-form-field class="example-full-width search-input" style="font-family: 'Gotham'">
+    <input (keyup)="applayFilter($event.target.value)" style="font-family: 'Gotham'" matInput placeholder="Search">
+  </mat-form-field>
+</div>
+<div class="row px-80">
+  <table mat-table matTableExporter [dataSource]="dataSource" #exporter="matTableExporter" style="font-family: 'Gotham'" class="table table-hover">
+    <ng-container matColumnDef="chked" style="font-family: 'Gotham'" >
+      <th mat-header-cell *matHeaderCellDef class="mt-tbl mt-tbl-th mt-tbl-chked" style="font-family: 'Gotham'" >
+            <mat-checkbox  ></mat-checkbox>
+        </th>
+         <td mat-cell *matCellDef="let element" style="font-family: 'Gotham'"  class="mt-tbl mt-tbl-td mt-tbl-chked"> 
+          <mat-checkbox ></mat-checkbox>
+        </td>
+      </ng-container>
+    <ng-container matColumnDef="vendorID" style="font-family: 'Gotham'" >
+      <th mat-header-cell *matHeaderCellDef class="mt-tbl mt-tbl-th mt-tbl-userid"  style="text-align: left ;font-family: 'Gotham';">VENDOR ID</th>
+      <td mat-cell *matCellDef="let element" class="mt-tbl mt-tbl-td mt-tbl-userid" id="vendorid" (click)="selectedrow(element)"  style="text-align: left;font-family: 'Gotham'"> {{element.id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Vname" style="font-family: 'Gotham'" >
+      <th mat-header-cell *matHeaderCellDef class="mt-tbl mt-tbl-th mt-tbl-fname" style="font-family: 'Gotham';text-align: center;" >VENDOR NAME</th>
+      <td mat-cell *matCellDef="let element" class="mt-tbl mt-tbl-td mt-tbl-fname" style="font-family: 'Gotham';text-align: center;"  (click)="selectedrow(element)"> {{element.vendorName}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Vemail" style="font-family: 'Gotham'" >
+      <th mat-header-cell *matHeaderCellDef class="mt-tbl mt-tbl-th mt-tbl-lname" style="font-family: 'Gotham';text-align: center" >VENDOR EMAIL</th>
+      <td mat-cell *matCellDef="let element" class="mt-tbl mt-tbl-td mt-tbl-lname" style="font-family: 'Gotham';text-align: center"  (click)="selectedrow(element)" > {{element.emailAddress}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="phone" style="font-family: 'Gotham'" >
+      <th mat-header-cell *matHeaderCellDef class="mt-tbl mt-tbl-th mt-tbl-PHONE" style="font-family: 'Gotham' ;text-align: center;" >PHONE</th>
+      <td mat-cell *matCellDef="let element" class="mt-tbl mt-tbl-td mt-tbl-PHONE" (click)="selectedrow(element)" style="font-family: 'Gotham' ;text-align: center;" > {{element.praimaryPhoneNumber}} </td>
+    </ng-container>
+    <ng-container matColumnDef="paymentmethod">
+      <th mat-header-cell *matHeaderCellDef class="mt-tbl mt-tbl-th mt-tbl-PAYMENT"style="font-family: 'Gotham' ;text-align: center;">PAYMENT METHOD</th>
+      <td mat-cell *matCellDef="let element" class="mt-tbl mt-tbl-td mt-tbl-PAYMENT" (click)="selectedrow(element)" style="font-family: 'Gotham' ;text-align: center;"> {{element.paymentMethod.paymentMethodName}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="time">
+      <th mat-header-cell *matHeaderCellDef class="mt-tbl mt-tbl-th mt-tbl-time" style="text-align: center;font-family: 'Gotham'">LEAD TIME</th>
+      <td mat-cell *matCellDef="let element" class="mt-tbl mt-tbl-td mt-tbl-time" style="  text-align: center;" (click)="selectedrow(element)"> {{element.leadTime}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="SHIPPING">
+      <th mat-header-cell *matHeaderCellDef class="mt-tbl mt-tbl-th mt-tbl-SHIPPING" style="text-align: center;font-family: 'Gotham'"> DEFUALT SHIPPING METHOD</th>
+      <td mat-cell *matCellDef="let element" class="mt-tbl mt-tbl-td mt-tbl-SHIPPING" style="  text-align: center;" (click)="selectedrow(element)"> {{element.shippingMethod.shippingMethodName}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef class="mt-tbl mt-tbl-th mt-tbl-Actions" style="font-family: 'Gotham';">Actions</th>
+      <td mat-cell *matCellDef="let element" class="mt-tbl mt-tbl-td mt-tbl-Actions">
+     
+        <button mat-icon-button (click)="updateVendor(element)"><mat-icon>launch</mat-icon></button>
+     
+    </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" ></tr>
+
+  </table>
+</div>
+  <div class="row px-80" style="font-family: 'Gotham';">
+    <mat-paginator #paginator style="font-family: 'Gotham';" [pageSize]="10" [pageSizeOptions]="[5, 10, 15,20]" ></mat-paginator>
+  </div>
+
+
+
+
+
+ 
+</mat-drawer-content>
+</mat-drawer-container>
+</div>

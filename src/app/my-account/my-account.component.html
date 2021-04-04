@@ -1,0 +1,84 @@
+<div class="page"  >
+    
+      <div class="row px-80" style="margin-top: 20px;">
+      
+      <span class="component-title" style=" font-family: Gotham; ">Account Information</span>
+    </div>
+    
+    <div class="row px-80">
+        <div class="companyinfo">
+        <div class="userInfo" style="float: left;">
+            <h3 style=" font-family: Gotham; ">User Information</h3>
+            <form  >
+      
+                <div class="top-row">
+    
+                  <div class="field-wrap">
+                  <div>  <label style=" font-family: Gotham; ">
+                      First Name
+                    </label>
+                </div>
+                 <div><input type="text" required autocomplete="off" style=" font-family: Gotham; " [(ngModel)]="updateAccountInfo.firstName" name="firstname"/></div> 
+                  </div>
+              
+                  <div class="field-wrap">
+                    <label style=" font-family: Gotham; ">
+                      Last Name<span class="req"></span>
+                    </label>
+                    <input type="text"required autocomplete="off" style=" font-family: Gotham; " [(ngModel)]="updateAccountInfo.lastName" name="lastname" />
+                  </div>
+                </div>
+          
+                <div class="field-wrap">
+                  <label style=" font-family: Gotham; ">
+                    Email Address<span class="req"></span>
+                  </label>
+                  <input type="email"required autocomplete="off" style=" font-family: Gotham; " [(ngModel)]="updateAccountInfo.emailAddress" name="username" />
+                </div>
+                
+                <div class="field-wrap">
+                  <label style=" font-family: Gotham; ">
+                   Phone <span class="req"></span>
+                  </label>
+                  <input type="text"required autocomplete="off" style=" font-family: Gotham; "  [(ngModel)]="updateAccountInfo.phoneNumber" name="lastname" />
+                </div>
+                <button type="submit" (click)=updateInfo() class="button button-block">Update Info</button>
+                
+                </form>
+        </div>
+    
+        <div class="password"  style="float: right;">
+            <h3 style=" font-family: Gotham; ">Change Password</h3>
+            <form  >
+          
+                <div class="field-wrap">
+                    <label style=" font-family: Gotham; ">
+                      Current Password<span class="req"></span>
+                    </label>
+                    <input type="text"required autocomplete="off" style=" font-family: Gotham; " [(ngModel)]="currentpass"name="lastname" />
+                    <div *ngIf="iscorrectPassword(currentpass)" style="color: red; font-size: 9px; text-align: left;">*Incorrect Password! </div>
+                  </div>
+  
+                
+                <div class="field-wrap">
+                  <label style=" font-family: Gotham; ">
+                    New Password<span class="req"></span>
+                  </label>
+                  <input type="password"required autocomplete="off" style=" font-family: Gotham; " [(ngModel)]="NewPass" name="lastname" />
+                </div>
+
+                <div class="field-wrap">
+                    <label style=" font-family: Gotham; "> 
+                Confirm Password<span class="req"></span>
+                    </label>
+                    <input type="text"required autocomplete="off" style=" font-family: Gotham; " [(ngModel)]="updateAccountPassword.password" name="lastname" />
+                    <div *ngIf="cnfermPassword(updateAccountPassword.password)" style="color: red; font-size: 9px; text-align: left;">*Passwor dosn't match </div>
+
+                  </div>
+                <button type="submit" class="button button-block" style=" font-family: Gotham; ">Update Password</button>
+                
+                </form>
+        </div>
+    </div>
+    </div>
+    </div>

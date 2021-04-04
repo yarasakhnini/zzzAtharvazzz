@@ -1,0 +1,52 @@
+
+h1 {
+   
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 120%;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.21;
+    letter-spacing: 0.29px;
+    text-align: left;
+    color: #def3ff;
+  }
+  ::ng-deep .mat-checkbox .mat-checkbox-frame {
+    background-color: white;
+}
+  .mat-checkbox{
+   
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 100%;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.14;
+    letter-spacing: 0.21px;
+    text-align: left;
+    color: #def3ff;
+   
+  }
+
+
+  .vendor-time{
+    padding-bottom: 20%;
+    padding-top: 20%;
+    margin-left:  5%;
+
+  }
+ 
+  .vendor-pay{
+    margin-left:  5%;
+  }
+ .mat-divider{
+   height: 0;
+    margin-left:  5%;
+    margin-right: 5%;
+    width: 85% ;
+    border-top-color: #def3ff;
+padding-bottom: 10%;;
+  }
+  .row{
+    flex:1;
+  }

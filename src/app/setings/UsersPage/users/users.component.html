@@ -1,0 +1,66 @@
+<div class="row px-80" style="margin-top: 20px;">
+  <span  class= "component-title" style=" font-family: 'Gotham'; font-size: 24px;font-weight: bold;padding: 15px;">Users</span>
+</div>
+<div class="row px-80">
+  <button mat-raised-button	 class="m-1"style="border: #05CBBF solid 1px;color:#05CBBF ;font-family: Gotham; #05CBBF;font-size: 13px ;box-shadow: none;" (click)="addUser()">
+    Add User
+    <mat-icon style="color:#05CBBF ;font-size: 13px; margin-top: 8%;" >add</mat-icon>
+  </button>
+
+  <button mat-raised-button	 [matMenuTriggerFor]="menu" class="m-1" style=" font-family: 'Gotham'; background:#05CBBF ; color: #ffffff; width:4cm;
+   border-radius: 5px;">
+    Actions
+    <mat-icon style="color:#c4bdbd">keyboard_arrow_down</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu" >
+    <label mat-menu-item ><input type="file" style=" font-family: 'Gotham'; " ngf-select ng-model="new_files" (change)="onFileChange($event)" multiple style="display:none"/>Upload User </label>
+    <button mat-menu-item style=" font-family: 'Gotham'; ">Download User</button>
+    
+  </mat-menu>    
+  <mat-form-field class="example-full-width search-input">
+    <input matInput style=" font-family: 'Gotham'; " placeholder="Search">
+  </mat-form-field>
+</div>
+<div class="row px-80" style="height: 530px;">
+  <table mat-table [dataSource]="nuser" class="table table-hover">
+    <ng-container matColumnDef="chked">
+        <th mat-header-cell *matHeaderCellDef class="mt-tbl mt-tbl-th mt-tbl-chked">
+            <mat-checkbox onclick="alert('df')"></mat-checkbox>
+        </th>
+        <td mat-cell *matCellDef="let element" class="mt-tbl mt-tbl-td mt-tbl-chked"> 
+            <mat-checkbox></mat-checkbox>
+        </td>
+    </ng-container>
+    <!-- <ng-container matColumnDef="user_id">
+      <th mat-header-cell *matHeaderCellDef class="mt-tbl mt-tbl-th mt-tbl-userid">USER ID</th>
+      <td mat-cell *matCellDef="let element" class="mt-tbl mt-tbl-td mt-tbl-userid"> {{element.user_id}} </td>
+    </ng-container> -->
+    <ng-container matColumnDef="fname">
+      <th mat-header-cell style=" font-family: 'Gotham'; " *matHeaderCellDef class="mt-tbl mt-tbl-th mt-tbl-fname">FIRST NAME</th>
+      <td mat-cell style=" font-family: 'Gotham'; " *matCellDef="let element" class="mt-tbl mt-tbl-td mt-tbl-fname"> {{element.firstName}} </td>
+    </ng-container>
+    <ng-container matColumnDef="lname">
+      <th mat-header-cell style=" font-family: 'Gotham'; " *matHeaderCellDef class="mt-tbl mt-tbl-th mt-tbl-lname">LAST NAME</th>
+      <td mat-cell style=" font-family: 'Gotham'; " *matCellDef="let element" class="mt-tbl mt-tbl-td mt-tbl-lname"> {{element.lastName}} </td>
+    </ng-container>
+    <ng-container matColumnDef="phone">
+      <th mat-header-cell *matHeaderCellDef style=" font-family: 'Gotham'; text-align: center;" class="mt-tbl mt-tbl-th mt-tbl-PHONE">PHONE</th>
+      <td mat-cell *matCellDef="let element" style=" font-family: 'Gotham'; text-align: center; " class="mt-tbl mt-tbl-td mt-tbl-PHONE"> {{element.phoneNumber}} </td>
+    </ng-container>
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef style=" font-family: 'Gotham'; text-align: center;" class="mt-tbl mt-tbl-th mt-tbl-EMAIL">EMAIL</th>
+      <td mat-cell *matCellDef="let element" style=" font-family: 'Gotham'; text-align: center;" class="mt-tbl mt-tbl-td mt-tbl-EMAIL"> {{element.email}} </td>
+    </ng-container>
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef  style=" font-family: 'Gotham'; text-align:center " class="mt-tbl mt-tbl-th mt-tbl-STATUS">STATUS</th>
+      <td mat-cell *matCellDef="let element"style=" font-family: 'Gotham'; text-align:center ;" class="mt-tbl mt-tbl-td mt-tbl-STATUS"> 
+            <button mat-raised-button [class.Active]="userActveStatus(element.status)" [class.dictive]="userdectveStatus(element.status)" style=" font-family: 'Gotham'; " (click)='ondisactive(element)' >{{statusTitle}}</button>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <div class="row px-80">
+    <mat-paginator #paginator [pageSize]="5"  [pageSizeOptions]="[5, 10, 15,20]" ></mat-paginator>
+  </div>
+</div>

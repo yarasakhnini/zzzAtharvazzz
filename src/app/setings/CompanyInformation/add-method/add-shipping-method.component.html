@@ -1,0 +1,15 @@
+<div class='modale' style="height: 100%;">
+    <div class='modaleTiltle' style="    align-content: center;">
+        <h3 style=" font-family: Gotham; ">Add Shipping Method</h3>
+    </div>
+    <div class="field-wrap">
+     <div> <label style=" font-family: Gotham; ">
+         Shipping Method Name
+        </label></div>  
+        <input type="text"  style=" font-family: Gotham; "[(ngModel)]="Shippingmethod.shippingMethodName" name='shippingMethodName'/>
+      </div>
+
+    <div class='m-1'>
+    <button mat-raised-button  style=" font-family: Gotham; " [mat-dialog-close]="true" (click)=createShippingMMethod()>save</button>
+    </div>
+</div>

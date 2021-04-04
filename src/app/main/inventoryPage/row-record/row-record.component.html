@@ -1,0 +1,72 @@
+<body>
+
+       
+       
+    <form #heroForm="ngForm" calss="modale" style="width: 100%;">
+  
+             
+
+        <div class="product" >
+       
+        <div> <h1 class= "Title"  style="font-family: 'Gotham'">Product Information</h1></div>
+
+            <div class='row-items'><label  style="font-family: 'Gotham'" class= "items">Product Vendor Name: </label> <label  style="font-family: 'Gotham'"class="label2">{{productRow.vendorId}}</label></div>
+            <div class='row-items'><label  style="font-family: 'Gotham'"class= "items">MPN: </label> <label  style="font-family: 'Gotham'"class="label2">{{productRow.mpn}}</label></div>
+            <div class='row-items'><label  style="font-family: 'Gotham'"class= "items">ASIN :</label><label  style="font-family: 'Gotham'"class="label2">{{productRow.asin}}</label></div>
+            <div class='row-items'><label  style="font-family: 'Gotham'"class= "items">SKU# :</label><label  style="font-family: 'Gotham'"class="label2">{{productRow.sku}}</label> </div>
+            <div class='row-items'><label  style="font-family: 'Gotham'"class= "items">UPC Number# :</label><label  style="font-family: 'Gotham'"class="label2">{{productRow.upcNumber}}</label> </div>
+            <div class='row-items'><label  style="font-family: 'Gotham'"class= "items">FNSKU:</label><label  style="font-family: 'Gotham'"class="label2">{{productRow.fnsku}}</label></div>
+            <div class='row-items'><label  style="font-family: 'Gotham'"class= "items">BIN number:</label> <label  style="font-family: 'Gotham'"class="label2">{{productRow.binNumber}}</label></div>
+            <div class='row-items'><label  style="font-family: 'Gotham'"class= "items">miami Warehouse Bin:</label> <label  style="font-family: 'Gotham'"class="label2">{{productRow.miamiWarehouseBin}}</label></div>
+            <div class='row-items'><label  style="font-family: 'Gotham'"class= "items">Status:</label><label  style="font-family: 'Gotham'"class="label2">{{productRow.status}}</label></div>
+            <div class='row-items'><label  style="font-family: 'Gotham'"class= "items">Is FBA:</label> <label  style="font-family: 'Gotham'"class="label2">{{productRow.isFBA}}</label></div>
+            <div class='row-items'><label  style="font-family: 'Gotham'"class= "items">Is FBA direct:</label> <label  style="font-family: 'Gotham'"class="label2">{{productRow.isFBADirect}}</label></div>
+            <div class='row-items'><label  style="font-family: 'Gotham'"class= "items">prduct Name :</label><label  style="font-family: 'Gotham'"class="label2">{{productRow.productName}}</label></div>
+            <div class='row-items'><label  style="font-family: 'Gotham'"class= "items">Unit Cost :</label><label  style="font-family: 'Gotham'"class="label2">{{productRow.unitCost}}</label> </div>
+            <div class='row-items'><label  style="font-family: 'Gotham'"class= "items">Product Lead Time :</label><label  style="font-family: 'Gotham'"class="label2">{{productRow.productLeadTime}}</label> </div>
+            <div class='row-items'> <label  style="font-family: 'Gotham'"class= "items">Available quantity : </label><label  style="font-family: 'Gotham'"class="label2">{{productRow.avalibaleQuantity}}</label></div>
+
+    </div> 
+    
+
+
+        <div class="Units" >
+
+    <div>
+    <div><h1  style="font-family: 'Gotham'"class= "Title">Case Details</h1></div>
+    <div class='row-items'><label  style="font-family: 'Gotham'"class= "items">Case Hight(in) :</label><label  style="font-family: 'Gotham'"class="label2">{{productRow.caseHeight}}</label></div>
+    <div class='row-items'><label  style="font-family: 'Gotham'"class= "items">Case Width (in) :</label><label  style="font-family: 'Gotham'"class="label2">{{productRow.caseWidth}}</label></div>
+    <div class='row-items'><label  style="font-family: 'Gotham'"class= "items">Case Length(in) :</label> <label  style="font-family: 'Gotham'" class="label2">{{productRow.caseLength}}</label></div>
+    <div class='row-items'><label  style="font-family: 'Gotham'"class= "items">Case Weight :</label><label  style="font-family: 'Gotham'"class="label2">{{productRow.caseWeight}}</label></div>
+    <div class='row-items'><label  style="font-family: 'Gotham'"class= "items">Case Unit Quantity:</label><label  style="font-family: 'Gotham'"class="label2">{{productRow.caseUnitQuantity}}</label></div>
+        </div> 
+
+        
+
+    <div >
+        <div><h1  style="font-family: 'Gotham'"class= "Title">Item Details</h1></div>
+        <div class='row-items'> <label  style="font-family: 'Gotham'"class= "items">Item Hight(in) : </label><label  style="font-family: 'Gotham'"class="label2">{{productRow.itemHeight}}</label> </div>
+        <div class='row-items'> <label  style="font-family: 'Gotham'"class= "items">Item Width (in) : </label><label  style="font-family: 'Gotham'"class="label2">{{productRow.itemWidth}}</label> </div>
+        <div class='row-items'> <label  style="font-family: 'Gotham'"class= "items">Item Length(in) : </label><label  style="font-family: 'Gotham'"class="label2">{{productRow.itemLength}}</label></div>
+        <div class='row-items'> <label  style="font-family: 'Gotham'"class= "items">Item Weight : </label> <label  style="font-family: 'Gotham'"class="label2">{{productRow.itemWeight}}</label></div>
+        <div class='row-items'> <label  style="font-family: 'Gotham'"class= "items">Over size item : </label><label  style="font-family: 'Gotham'"class="label2">{{productRow.overSizeItem}}</label></div>
+
+    </div> 
+
+    <div>
+        <div><h1  style="font-family: 'Gotham'"class= "Title">Unit Details</h1></div>
+        <div class='row-items'> <label  style="font-family: 'Gotham'"class= "items">Unit Hight(in) : </label> <label  style="font-family: 'Gotham'"class="label2">{{productRow.unitHeight}}</label></div>
+        <div class='row-items'> <label  style="font-family: 'Gotham'"class= "items">Unit Width (in) : </label><label  style="font-family: 'Gotham'"class="label2">{{productRow.unitWidth}}</label></div>
+        <div class='row-items'> <label  style="font-family: 'Gotham'"class= "items">Unit Length(in) : </label><label  style="font-family: 'Gotham'"class="label2">{{productRow.unitLength}}</label></div>
+        <div class='row-items'> <label  style="font-family: 'Gotham'"class= "items">Unit Weight : </label> <label  style="font-family: 'Gotham'"class="label2">{{productRow.unitWeight}}</label></div>
+        <div class='row-items'> <label  style="font-family: 'Gotham'"class= "items">Estimated Inbound CostPerUnit : </label><label  style="font-family: 'Gotham'"class="label2">{{productRow.costPerUnit}}</label></div>
+
+    </div> 
+    
+</div>
+
+</form>
+
+
+
+</body>

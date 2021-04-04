@@ -1,0 +1,146 @@
+
+    <div calss="modale"  style="font-family: 'Gotham';">
+       
+        <!-- <form (ngSubmit)="onSubmit()" #heroForm="ngForm"> -->
+        <div [formGroup]="AddVendorForm" class="product" style="font-family: 'Gotham';">
+            <div> <h1 class= "Title" style="font-family: 'Gotham';" >Vendor Information</h1></div>
+           
+            <div class='row-items' style="font-family: 'Gotham';"><label class= "items" style="font-family: 'Gotham';">Vendor Code:</label><input class="inputx" type="text" formControlName ="vendorCode" style="font-family: 'Gotham';" [(ngModel)]="VendorModal.vendorCode" > 
+             <div *ngIf="submitted && f.vendorCode.errors" class="invalid-feedback">
+                    <div *ngIf="f.vendorCode.errors.required">*required</div>
+                    </div>
+            </div>
+                <div class='row-items'style="font-family: 'Gotham';"><label class= "items" style="font-family: 'Gotham';">Vendor Name:</label><input style="font-family: 'Gotham';" class="inputx" type="text" formControlName ="vendorName" [(ngModel)]="VendorModal.vendorName"  >
+                 <div *ngIf="submitted && f.vendorName.errors" class="invalid-feedback">
+                        <div *ngIf="f.vendorName.errors.required">*required</div>
+                        </div>
+                </div>
+                <div class='row-items'style="font-family: 'Gotham';"><label class= "items" style="font-family: 'Gotham';">Vendor Email Template</label>
+                    <select  style="width: 52%; font-family: 'Gotham'" class="inputx" formControlName ="emailTemplateId" [(ngModel)]="VendorModal.emailTemplateId" >
+                        <option *ngFor="let Item of emailTemplate" style="font-family: 'Gotham';" [value]="Item.id" >{{Item.templateName}}</option>
+                     </select>
+                      <div *ngIf="submitted && f.emailTemplateId.errors" class="invalid-feedback">
+                        <div *ngIf="f.emailTemplateId.errors.required">*required</div>
+                        </div>
+                </div>
+                <div class='row-items'style="font-family: 'Gotham';"><label style="font-family: 'Gotham';"class= "items">Website:</label><input class="inputx:" type="text" formControlName ="website"  [(ngModel)]="VendorModal.website" >
+                <div *ngIf="submitted && f.website.errors" class="invalid-feedback">
+                        <div *ngIf="f.website.errors.required">*required</div>
+                        </div>
+                </div>
+                <div class='row-items'style="font-family: 'Gotham';"><label class= "items" style="font-family: 'Gotham';">Lead time:</label><input style="font-family: 'Gotham';" class="inputx:" type="text" formControlName ="leadTime"  [(ngModel)]="VendorModal.leadTime" >
+                  <div *ngIf="submitted && f.leadTime.errors" class="invalid-feedback">
+                        <div *ngIf="f.leadTime.errors.required">*required</div>
+                        </div>
+                </div>
+                <div class='row-items'style="font-family: 'Gotham';"><label class= "items"style="font-family: 'Gotham';">Payment Method:</label>
+         <select id="Paymentname" style="width: 52%;font-family: 'Gotham'" class="inputx" [(ngModel)]="VendorModal.paymentMethodId" formControlName ="paymentMethodName">
+                      <option *ngFor="let Item of paymentmethodmodel" [value]="Item.id" id='Pname' style="font-family: 'Gotham'" >{{Item.paymentMethodName}}</option>
+                      </select>
+                       <div *ngIf="submitted && f.paymentMethodName.errors" class="invalid-feedback">
+                        <div *ngIf="f.paymentMethodName.errors.required">*required</div>
+                        </div>
+                </div>
+
+        </div> 
+
+           
+
+        <div [formGroup]="AddVendorForm" class="vendor">
+            <div ><h1 class= "Title" style="font-family: 'Gotham'">Vendor Shipping Information</h1></div>
+            <div class='row-items'><label class= "items" style="font-family: 'Gotham'" >Shipping Method:</label>
+               <select style="width: 52%;font-family: 'Gotham'" formControlName ="shippingMethodId" [(ngModel)]="VendorModal.shippingMethodId">
+                  <option *ngFor="let Item of shippingmethodmodel" [value]="Item.id" style="font-family: 'Gotham'" >{{Item.shippingMethodName}}</option>
+               </select>
+               <div *ngIf="submitted && f.shippingMethodId.errors" class="invalid-feedback">
+                <div *ngIf="f.shippingMethodId.errors.required">*required</div>
+                </div>
+            </div>
+            <div class='row-items'style="font-family: 'Gotham'"><label style="font-family: 'Gotham'"class= "items">Shipping Address 1:</label><input class="IsFBAdirect" type="text" style="font-family: 'Gotham'"  formControlName ="shippingAddress1" [(ngModel)]="VendorModal.shippingAddress1"> 
+               <div *ngIf="submitted && f.shippingAddress1.errors" class="invalid-feedback">
+                    <div *ngIf="f.shippingAddress1.errors.required">*required</div>
+                    </div>
+            </div>
+            <div class='row-items'style="font-family: 'Gotham'"><label style="font-family: 'Gotham'"class= "items">Shipping Address 2: </label><input class="Vendorname" type="text" style="font-family: 'Gotham'" formControlName ="shippingAddress2" [(ngModel)]="VendorModal.shippingAddress2">
+             <div *ngIf="submitted && f.shippingAddress2.errors" class="invalid-feedback">
+                    <div *ngIf="f.shippingAddress2.errors.required">*required</div>
+                    </div>
+            </div>
+            <div class='row-items'style="font-family: 'Gotham'"><label style="font-family: 'Gotham'"class= "items">Shipping City:</label> <input class="Vendorpartnumber" type="text" style="font-family: 'Gotham'" formControlName ="shippingCity"[(ngModel)]="VendorModal.shippingCity">
+              <div *ngIf="submitted && f.shippingCity.errors" class="invalid-feedback">
+                    <div *ngIf="f.shippingCity.errors.required">*required</div>
+                    </div>
+            </div>
+            <div class='row-items'style="font-family: 'Gotham'"><label style="font-family: 'Gotham'"class= "items">Shipping State</label> <input class="Vendorname" type="text" style="font-family: 'Gotham'" formControlName ="shippingState"[(ngModel)]="VendorModal.shippingState">
+             <div *ngIf="submitted && f.shippingState.errors" class="invalid-feedback">
+                    <div *ngIf="f.shippingState.errors.required">*required</div>
+                    </div>
+            </div>
+            <div class='row-items'style="font-family: 'Gotham'"><label style="font-family: 'Gotham'"class= "items">Shipping Country:</label><input class="Vendorcode" type="text"style="font-family: 'Gotham'"  formControlName ="shippingCountry"[(ngModel)]="VendorModal.shippingCountry">
+              <div *ngIf="submitted && f.shippingCountry.errors" class="invalid-feedback">
+                    <div *ngIf="f.shippingCountry.errors.required">*required</div>
+                    </div> 
+            </div>
+            <div class='row-items'style="font-family: 'Gotham'"><label style="font-family: 'Gotham'"class= "items">Shipping Zip:</label> <input class="BINnumber" type="text" style="font-family: 'Gotham'" formControlName ="shippingZip"[(ngModel)]="VendorModal.shippingZip"> 
+               <div *ngIf="submitted && f.shippingZip.errors" class="invalid-feedback">
+                    <div *ngIf="f.shippingZip.errors.required">*required</div>
+                    </div> 
+            </div>
+                </div> 
+              
+                <mat-divider style="margin-top: 2%; margin-bottom:2% ;"></mat-divider>
+                
+
+        <div class="caseDetails"  style="font-family: 'Gotham'" >
+        <div class='row-items'><h1 class= "Title" style="font-family: 'Gotham'" >Vendor Contact Information</h1></div>
+        <div [formGroup]="AddVendorForm" class='row-items'><label class= "items" style="font-family: 'Gotham'" >Contact First Name:</label><input style="font-family: 'Gotham'"  class="CaseHight" type="text" formControlName ="contactFirstName"[(ngModel)]="VendorModal.contactFirstName">
+        <div *ngIf="submitted && f.contactFirstName.errors" class="invalid-feedback">
+                <div *ngIf="f.contactFirstName.errors.required">*required</div>
+                </div>
+        </div>
+        <div [formGroup]="AddVendorForm"class='row-items'><label class= "items"style="font-family: 'Gotham'" >Contact Last Name:</label><input style="font-family: 'Gotham'"  class="CaseHight" type="text" formControlName ="contactLastName"[(ngModel)]="VendorModal.contactLastName">
+          <div *ngIf="submitted && f.contactLastName.errors" class="invalid-feedback">
+            <div *ngIf="f.contactLastName.errors.required">*required</div>
+            </div>
+        </div>
+        <div [formGroup]="AddVendorForm" class='row-items'> <label class= "items"style="font-family: 'Gotham'" >Email Address:</label><input class="CaseHight" type="text"style="font-family: 'Gotham'"  formControlName ="emailAddress"[(ngModel)]="VendorModal.emailAddress">
+         <div *ngIf="submitted && f.emailAddress.errors" class="invalid-feedback">
+                <div *ngIf="f.emailAddress.errors.required">*required</div>
+                </div>
+        </div>
+        <div [formGroup]="AddVendorForm" class='row-items'> <label class= "items"style="font-family: 'Gotham'" >Praimary Phone Number: </label><input class="CaseWight" style="font-family: 'Gotham'" type="text" formControlName ="praimaryPhoneNumber"[(ngModel)]="VendorModal.praimaryPhoneNumber">
+         <div *ngIf="submitted && f.praimaryPhoneNumber.errors" class="invalid-feedback">
+                <div *ngIf="f.praimaryPhoneNumber.errors.required">*required</div>
+                </div>
+        </div>
+        <div class='row-items'><label class= "items"style="font-family: 'Gotham'" >Secondary Phone Number: </label><input class="CaseUnitQuantity"style="font-family: 'Gotham'"  type="text"  [(ngModel)]="VendorModal.secondryPhoneNumber"> </div>
+        <div class='row-items'><label class= "items"style="font-family: 'Gotham'" >Fax Number:</label> <input class="CaseUnitQuantity" type="text" style="font-family: 'Gotham'" [(ngModel)]="VendorModal.faxNumber"> </div>
+
+    </div> 
+
+  
+
+        <div class="Item" style="font-family: 'Gotham'" >
+            <div><h1 class= "Title"style="font-family: 'Gotham'" >Vendor Billing Information</h1></div>
+            <div class='row-items'> <label class= "items" style="font-family: 'Gotham'" >Billing Address 1:</label><input class="ItemHight" type="text"style="font-family: 'Gotham'"    [(ngModel)]="VendorModal.billingAddress1"> </div>
+            <div class='row-items'> <label class= "items"style="font-family: 'Gotham'" >Billing Address 2:</label> <input class="ItemWidth" type="text"style="font-family: 'Gotham'"  [(ngModel)]="VendorModal.billingAddress2"> </div>
+            <div class='row-items'> <label class= "items"style="font-family: 'Gotham'" >Billing City: </label><input class="ItemLength" type="text"style="font-family: 'Gotham'"   [(ngModel)]="VendorModal.billingCity"> </div>
+            <div class='row-items'> <label class= "items"style="font-family: 'Gotham'" >Billing State:</label> <input class="ItemWight" type="text"style="font-family: 'Gotham'"  [(ngModel)]="VendorModal.billingState"> </div>
+            <div class='row-items'> <label class= "items"style="font-family: 'Gotham'" >Billing Country: </label><input class="Oversizeitem" type="text"style="font-family: 'Gotham'"   [(ngModel)]="VendorModal.billingCountry"></div>
+
+        </div> 
+          
+    
+        <!-- </form> -->
+        
+        <div class="button"> 
+            <button  mat-raised-button style="font-family: 'Gotham'"   (click)=onSubmit() >save</button>  
+            </div>
+    </div>
+
+  
+
+
+
+
+   

@@ -1,0 +1,164 @@
+  <div class="row px-80" style="margin-top: 20px; margin-bottom: 2%;" >
+    
+
+    <span class="component-title"  style="font-family: Gotham;">New Purchase Order</span>
+    </div>
+
+<div class="cards" id="content"  >
+
+<mat-card class="card1" style="font-family: Gotham;">
+ 
+    <div class = "VI">
+    <div class="title" style="font-family: Gotham;">Vendor Information</div>
+    <div  class= "row-items"  ><label  style="font-family: Gotham;">Vendor Id:</label>{{vendorinformation?.id}}</div>
+    <div   class= "row-items" ><label  style="font-family: Gotham;">Vendor Name:</label>{{vendorinformation?.vendorName}}</div>
+    <div  class= "row-items" ><label  style="font-family: Gotham;">Website:</label>{{vendorinformation?.website}}</div>
+    <div  class= "row-items" ><label  style="font-family: Gotham;">Lead time:</label>{{vendorinformation?.leadTime}}</div>
+    <div  class= "row-items" ><label  style="font-family: Gotham;">Payment Method:</label>{{vendorinformation?.paymentMethod.paymentMethodName}}</div>
+    </div>
+
+    <div class = "VSI">
+    <div class="title" > Shipping Information</div>
+    <div  class= "row-items" ><label style="font-family: Gotham;">Shipping Address:</label><label class='label2'>{{vendorinformation?.shippingAddress1}}</label> </div>
+    <div class= "row-items"  ><label style="font-family: Gotham;">Shipping Address 2:</label><label class='label2'>{{vendorinformation?.shippingAddress2}}</label></div>
+    <div class= "row-items"  ><label style="font-family: Gotham;">Shipping City:</label><label class='label2'>{{vendorinformation?.shippingCity}}</label></div>
+    <div class= "row-items"  ><label style="font-family: Gotham;">Shipping State:</label><label class='label2'>{{vendorinformation?.shippingState}}</label></div>
+    <div class= "row-items"  ><label style="font-family: Gotham;">Shipping Country:</label><label class='label2'>{{vendorinformation?.shippingCountry}}</label></div>
+    <div class= "row-items" ><label style="font-family: Gotham;">Shipping Zip:</label><label class='label2'>{{vendorinformation?.shippingZip}}</label></div>
+
+    </div>
+
+</mat-card>
+
+<mat-card class="card2"  [formGroup]="ShippingToForm" >
+    <div class="title" style="font-family: Gotham;">Receiving Information</div>
+    <div class= "row-items"><label style="font-family: Gotham;">Receiving Address:</label><input type="address" [(ngModel)]="purchaseOrderViewModel.receivingAddress1" formControlName="receivingAddress1">
+      <div *ngIf="submitted && f.receivingAddress1.errors" class="invalid-feedback">
+        <div *ngIf="f.receivingAddress1.errors.required">*this field is required</div>
+        </div>
+    </div>
+    <div class= "row-items"><label  style="font-family:Gotham;">Receiving Address 2:</label> <input type="address" [(ngModel)]="purchaseOrderViewModel.receivingAddress2" formControlName="receivingAddress2">
+      <div *ngIf="submitted && f.receivingAddress2.errors" class="invalid-feedback">
+        <div *ngIf="f.receivingAddress2.errors.required">*this field is required</div>
+        </div>
+    </div>
+    <div class= "row-items"><label style="font-family: Gotham;">Receiving City:</label> <input type="address" [(ngModel)]="purchaseOrderViewModel.receivingCity" formControlName="receivingCity">
+      <div *ngIf="submitted && f.receivingCity.errors" class="invalid-feedback">
+        <div *ngIf="f.receivingCity.errors.required">*this field is required</div>
+        </div>
+    </div>
+    <div class= "row-items"><label style="font-family: Gotham;">Receiving State:</label> <input type="address" [(ngModel)]="purchaseOrderViewModel.receivingState" formControlName="receivingState">
+      <div *ngIf="submitted && f.receivingState.errors" class="invalid-feedback">
+        <div *ngIf="f.receivingState.errors.required">*this field is required</div>
+        </div>
+    </div>
+    <div class= "row-items"><label style="font-family: Gotham;">Receiving Country:</label> <input type="address" [(ngModel)]="purchaseOrderViewModel.receivingCountry "formControlName="receivingCountry">
+      <div *ngIf="submitted && f.receivingCountry.errors" class="invalid-feedback">
+        <div *ngIf="f.receivingCountry.errors.required">*this field is required</div>
+        </div>
+    </div>
+    <div class= "row-items"><label style="font-family: Gotham;">Receiving Zip:</label> <input  [(ngModel)]="purchaseOrderViewModel.receivingZip" formControlName="receivingZip">
+      <div *ngIf="submitted && f.receivingZip.errors" class="invalid-feedback">
+        <div *ngIf="f.receivingZip.errors.required">*this field is required</div>
+        </div>
+    </div>
+  
+</mat-card>
+
+  </div>
+  
+  <div class="row px-80">
+    <button mat-raised-button	 class="m-1"style="border: #05CBBF solid 1px;color:#05CBBF ;font-family: Gotham; #05CBBF;font-size: 13px ;box-shadow: none;" (click)="onCreat()">
+      Add Product
+      <mat-icon style="color:#05CBBF ;font-size: 13px; margin-top: 8%;" >add</mat-icon>
+    </button>
+
+    <button mat-raised-button class="m-1"  style="background:#05CBBF ; color: #ffffff; width:6cm;
+    border-radius: 5px; position:revert; font-family: 'Gotham'; box-shadow: none; " (click)="onSubmit()">complete purchase order</button> 
+    <mat-form-field class="example-full-width search-input">
+      <input (keyup)="applayFilter($event.target.value)" matInput placeholder="Search">
+    </mat-form-field>
+  </div>
+  <div class="row px-80" style="height: 25%;"   >
+    <table mat-table matTableExporter [dataSource]="dataSource"  #exporter="matTableExporter" class="table table-hover">
+      <ng-container matColumnDef="chked">
+        <th mat-header-cell *matHeaderCellDef class="mt-tbl mt-tbl-th mt-tbl-chked">
+              <mat-checkbox  onclick="alert('df')"></mat-checkbox>
+          </th>
+           <td mat-cell *matCellDef="let element" class="mt-tbl mt-tbl-td mt-tbl-chked" > 
+            <mat-checkbox ></mat-checkbox>
+          </td>
+        </ng-container>
+      <ng-container matColumnDef="SKU">
+        <th mat-header-cell *matHeaderCellDef class="mt-tbl mt-tbl-th mt-tbl-userid" style="font-family: Gotham;">SKU#</th>
+        <td mat-cell *matCellDef="let element" class="mt-tbl mt-tbl-td mt-tbl-userid" style="font-family: Gotham;" > {{element.sku}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="PRODCUTNAME">
+        <th mat-header-cell *matHeaderCellDef class="mt-tbl mt-tbl-th mt-tbl-fname" style="font-family: Gotham ;">PRODCUT NAME</th>
+        <td mat-cell *matCellDef="let element" class="mt-tbl mt-tbl-td mt-tbl-fname" style="font-family: Gotham;"> {{element.productName}} </td>
+      </ng-container>
+  
+
+      <ng-container matColumnDef="UNITCOST">
+        <th mat-header-cell *matHeaderCellDef class="mt-tbl mt-tbl-th mt-tbl-COST" style="font-family: Gotham;">UNIT COST</th>
+        <td mat-cell *matCellDef="let element" class="mt-tbl mt-tbl-td mt-tbl-COST" style="font-family: Gotham;"> {{element.unitCost}} </td>
+      </ng-container>
+  
+  
+     <ng-container matColumnDef="QUANTITY">
+        <th mat-header-cell *matHeaderCellDef class="mt-tbl mt-tbl-th mt-tbl-QUANTITY" style="font-family: Gotham ; ">QUANTITY</th>
+        <td mat-cell *matCellDef="let element" class="mt-tbl mt-tbl-td mt-tbl-QUANTITY" style="font-family: Gotham;" > {{element.avalibaleQuantity}}</td>
+      </ng-container>
+  
+  
+      <ng-container matColumnDef="TotalCost">
+        <th mat-header-cell *matHeaderCellDef class="mt-tbl mt-tbl-th mt-tbl-TOTAL" style="font-family: Gotham;">TOTAL COST</th>
+        <td mat-cell *matCellDef="let element" class="mt-tbl mt-tbl-td mt-tbl-TOTAL" style="font-family: Gotham; color: #1fb928;" > {{element.unitCost * element.avalibaleQuantity}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef class="mt-tbl mt-tbl-th mt-tbl-Action" style="text-align: center; font-family: Gotham;">Actions</th>
+        <td mat-cell *matCellDef="let element" class="mt-tbl mt-tbl-td mt-tbl-lname">
+       
+          <button mat-icon-button (click)="DeleteProduct(element)"><mat-icon>delete</mat-icon></button>
+       
+      </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        
+    </table>
+  </div>
+  <div class="row px-80">
+    <mat-paginator #paginator  [pageSizeOptions]="[3]"  [pageSizeOptions]="[3, 10, 15,20]"  showFirstLastButtons></mat-paginator>
+  </div>
+
+  
+<div class="results" >
+
+
+  <mat-card class = "result1"style="font-family: Gotham;"  >
+    <div class=res-edit1 style="font-family: Gotham;" ><button mat-button style="font-family: Gotham;" >Edit</button></div>
+      <div class="title" style="font-family: Gotham;" >Notes to Vendor</div>
+  <div>
+    <input [(ngModel)]="purchaseOrderViewModel.notesToVendor"  >
+  </div>    
+          </mat-card>
+          <mat-card class = "result2" style="font-family: Gotham;">
+            
+              <div class= "row-items"><label style="font-family: Gotham;" >Sub cost:</label>
+                {{purchaseOrderViewModel.subCost}}
+              </div>
+              <div class= "row-items"><label style="font-family: Gotham;" >Tax:</label> 
+                {{purchaseOrderViewModel.tax}}
+              </div>
+              <div class= "row-items"><label style="font-family: Gotham;" >Total Cost:</label>
+                {{purchaseOrderViewModel.totalCost}}
+              </div>
+
+          </mat-card>
+
+
+</div>

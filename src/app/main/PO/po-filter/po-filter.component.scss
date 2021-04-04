@@ -1,0 +1,125 @@
+@font-face {
+  font-family: 'Gotham';
+  src: url(src\assets\GothamBookRegular.otf) format("opentype");
+  }
+body{
+  overflow-y: hidden; /* Hide vertical scrollbar */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+  overflow: hidden;
+  
+
+}
+.mat-nav-list{
+  overflow: hidden; 
+ 
+}
+h1 {
+   
+  font-family: Gotham;
+    font-size: 16px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.21;
+    letter-spacing: 0.29px;
+    text-align: left;
+    color: #def3ff;
+  }
+  ::ng-deep .mat-checkbox .mat-checkbox-frame {
+    background-color: white;
+}
+
+::-webkit-scrollbar {
+  display: none;
+  }
+  
+  .example-margin{
+   
+    font-family: Gotham;
+    font-size: 11px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.14;
+    letter-spacing: 0.21px;
+    text-align: left;
+    color: #def3ff;
+   
+  }
+
+
+  .POstatus{
+    font-family: Gotham;
+
+    padding-top: 10%;
+    padding-bottom: 10%;
+    margin-left:  5%;
+
+  }
+ 
+ .Vendor{
+  font-family: Gotham;
+
+  padding-bottom: 100%;
+    h1{margin-left:  5%;}
+
+    label{
+        margin-left:  5%;
+        font-size:14px ;
+        color: #def3ff;
+        font-weight: bold;
+        font-family: Gotham;
+  }}
+  
+  .vendor_card{
+    font-family: Gotham;
+
+    label{
+        margin-left:  5%;
+        font-size: 12px;
+        color: #000000;
+        font-family: Gotham;
+      }
+    width:70% ;
+    height: 40%;
+    margin-left:  7%;}
+
+.Date{
+    padding-top: 10%;
+    }
+.period{
+height: fit-content;
+margin-left:  5%;
+input{
+width: 40%;
+margin-left:  2%;
+}
+
+}
+
+mat-raised-button{
+  font-family: Gotham;
+
+    width: 50%;
+    margin-left:  2%;
+    background-color: #05cbbf;
+    border-radius: 5px;
+    font-size: 11px;
+    color: #ffffff;
+}
+
+ mat-divider{
+  font-family: Gotham;
+
+   height: 0;
+    margin-left:  5%;
+    margin-right: 5%;
+    width: 85% ;
+    border-top-color: #def3ff;
+    padding-bottom: 10%;;
+  }
+  .row{
+    font-family: Gotham;
+    
+    flex:1;
+  }

@@ -1,0 +1,34 @@
+{
+  "Accounts": [
+    {
+      "id": 1,
+      "userName": "yara.sakhnini@yahoo.com",
+      "password": "1234",
+      "firstName": "yara",
+      "lastName": "sakhnini",
+      "businessName": "gold gym",
+      "businessWebsite": "sakhnini.com",
+      "addressLine1": "amman",
+      "addressline2": "amman2",
+      "city": "amman3",
+      "state": "amman4",
+      "zipCode": "123",
+      "country": "jordan"
+    },
+    {
+      "id": 2,
+      "userName": "ahmad.atari@sprintward.com",
+      "password": "123456",
+      "firstName": "ahmad",
+      "lastName": "atari",
+      "businessName": "sprintward",
+      "businessWebsite": "sprintward.com",
+      "addressLine1": "",
+      "addressline2": "amman2",
+      "city": "mulwakee",
+      "state": "Chicago",
+      "zipCode": "60025",
+      "country": "United States"
+    }
+  ]
+}

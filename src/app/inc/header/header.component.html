@@ -1,0 +1,27 @@
+﻿<nav class="docs-navbar-header" aria-label="Top Toolbar">
+    <a mat-button class=" docs-button top-items" >
+        <span class="material-icons" style="  color: #707070;" >
+            reorder
+        </span>
+    </a>
+    <a mat-button class=" docs-button top-items" routerLink="/Vendors" style=" font-family: 'Gotham'; ">Vendors</a>
+    <a mat-button class=" docs-button top-items" routerLink="/Products" style=" font-family: 'Gotham'; ">Products</a>
+    <a mat-button class=" docs-button top-items" routerLink="/purchaseOrder" style=" font-family: 'Gotham'; " >Purchase Orders</a>
+    <a mat-button class=" docs-button top-items"  [matMenuTriggerFor]="menu" style=" font-family: 'Gotham'; " >Settings</a>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item  style=" font-family: 'Gotham'; "routerLink="/CompanyInfo">Company Information</button>
+        <button mat-menu-item  style=" font-family: 'Gotham'; "routerLink="/API">API Keys</button>
+        <button mat-menu-item style=" font-family: 'Gotham'; " routerLink="/EmailTemplate">Templates</button>
+        <button mat-menu-item style=" font-family: 'Gotham'; " routerLink="/Users">Users</button>
+      </mat-menu>   
+    <div class="flex-spacer"></div>
+    <a mat-button style=" font-family: 'Gotham'; " class=" docs-button top-items" routerLink="/myAccount">
+        <i class="fa fa-user"style=" color: #707070;"></i>
+        My Account
+    </a>
+    <a mat-button style=" font-family: 'Gotham'; "  class=" docs-button top-items" routerLink="/">
+        <i class='fas fa-sign-out-alt'style="  color: #707070;"></i>
+        Sign out
+    </a>
+</nav>
+

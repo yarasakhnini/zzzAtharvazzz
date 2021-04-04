@@ -1,0 +1,15 @@
+<div class='modale' style="height: 100%;">
+  <div class='modaleTiltle' style="    align-content: center;">
+      <h3 style=" font-family: Gotham; ">Add Payment Method</h3>
+  </div>
+  <div class="field-wrap">
+   <div> <label style=" font-family: Gotham; ">
+       Payment Method Name
+      </label></div>  
+      <input type="text" style=" font-family: Gotham; " [(ngModel)]="paymentmethod.paymentMethodName" name='paymentMethodName'/>
+    </div>
+
+  <div>
+  <button mat-raised-button  [mat-dialog-close]="true" style=" font-family: Gotham; " (click)=createPaymentMMethod() >save</button>
+  </div>
+</div>

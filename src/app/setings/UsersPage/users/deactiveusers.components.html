@@ -1,0 +1,13 @@
+<div [class.popupActive]="ActiveMsg()">
+<div class=msg>
+    <span > {{msg}}</span> 
+</div>
+<div>
+    <button mat-raised-button [class.dictive]="Active()" [class.Active]="Deactive()" (click)='deactive()'	style=" font-family: 'Gotham'; float: left;" [mat-dialog-close]="true">
+      Yes..I am sure
+      </button>
+      <button mat-raised-button	[class.Active]="Active()" [class.dictive]="Deactive()" style=" font-family: 'Gotham'; float: right; " [mat-dialog-close]="true">
+      No..I dont want 
+      </button>
+</div>
+</div>

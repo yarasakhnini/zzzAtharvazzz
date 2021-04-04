@@ -1,0 +1,89 @@
+<body>
+
+       
+       
+    <!-- <form (ngSubmit)="onSubmit()"  #heroForm="ngForm" calss="modale" style="width: 100%;"> -->
+  
+             
+
+        <div class="product" style="width: 60%;">
+       
+        <div> <h1 class= "Title" style="font-family: 'Gotham'">Product Information</h1></div>
+            <div class='row-items'><label class= "items" style="font-family: 'Gotham'">Product Vendor Name: </label> 
+                <select  id="vendorsnames" style="width: 32%;font-family: 'Gotham'" [(ngModel)]="productmodel.vendorId">
+                  <option *ngFor="let Item of Vendor" style="font-family: 'Gotham'" [value]="Item.id">{{Item.vendorName}}</option>
+                </select>
+                                </div>
+                
+            <div class='row-items'><label style="font-family: 'Gotham'" class= "items">MPN: </label> <input  type="text" style="font-family: 'Gotham'"name ="Vendorpartnumber" [(ngModel)]="productmodel.mpn"></div>
+            <div class='row-items'><label style="font-family: 'Gotham'"class= "items">ASIN :</label> <input type="text" style="font-family: 'Gotham'"name ="Vendorcode" [(ngModel)]="productmodel.asin"></div>
+            <div class='row-items'><label style="font-family: 'Gotham'"class= "items">SKU# :</label><input type="text" style="font-family: 'Gotham'"name ="sku"[(ngModel)]="productmodel.sku"> </div>
+            <div class='row-items'><label style="font-family: 'Gotham'"class= "items">UPC Number# :</label><input  type="text" style="font-family: 'Gotham'"name ="sku" [(ngModel)]="productmodel.upcNumber"> </div>
+            <div class='row-items'><label style="font-family: 'Gotham'"class= "items">FNSKU:</label> <input  type="text" style="font-family: 'Gotham'"name ="IsFBAdirect" [(ngModel)]="productmodel.fnsku"></div>
+            <div class='row-items'><label style="font-family: 'Gotham'"class= "items">BIN number:</label> <input type="text" style="font-family: 'Gotham'"name ="BINnumber" [(ngModel)]="productmodel.binNumber"> </div>
+            <div class='row-items'><label style="font-family: 'Gotham'"class= "items">Status:</label> <input type="text" style="font-family: 'Gotham'"name ="IsFBAdirect" [(ngModel)]="productmodel.status"></div>
+            <div class='row-items'><label style="font-family: 'Gotham'"class= "items">Is FBA:</label> 
+                <select  id="vendorsnames" style="width: 32%;" [(ngModel)]="productmodel.isFBA">
+                    <option value="true"style="font-family: 'Gotham'">True</option>
+                    <option value="false"style="font-family: 'Gotham'">False</option>
+                  </select></div> 
+            <div class='row-items'><label class= "items"style="font-family: 'Gotham'" >Is FBA direct:</label> 
+                <select  id="vendorsnames" style="width: 32%;font-family: 'Gotham'" [(ngModel)]="productmodel.isFBADirect">
+                    <option value="true" style="font-family: 'Gotham'">True</option>
+                    <option value="false" style="font-family: 'Gotham'">False</option>
+                  </select></div> 
+            <div class='row-items' ><label style="font-family: 'Gotham'"class= "items">prduct Name :</label><input type="text" style="font-family: 'Gotham'"name ="prductName" [(ngModel)]="productmodel.productName"> </div>
+            <div class='row-items'><label style="font-family: 'Gotham'"class= "items">Unit Cost :</label><input  type="text"style="font-family: 'Gotham'" name ="prductPrice" [(ngModel)]="productmodel.unitCost"> </div>
+            <div class='row-items'><label style="font-family: 'Gotham'"class= "items">Product Lead Time :</label><input  style="font-family: 'Gotham'"type="text" name ="ProductLeadTime:" [(ngModel)]="productmodel.productLeadTime"> </div>
+            <div class='row-items'> <label style="font-family: 'Gotham'"class= "items">Available quantity : </label><input  style="font-family: 'Gotham'"type="text" name ="Availablequantity"[(ngModel)]="productmodel.avalibaleQuantity" > </div>
+
+    </div> 
+    
+
+
+        <div class="Units" style="width: 40%;">
+
+    <div>
+    <div><h1 class= "Title"style="font-family: 'Gotham'">Case Details</h1></div>
+    <div class='row-items'><label style="font-family: 'Gotham'"class= "items">Case Hight(in) :</label><input style="font-family: 'Gotham'" type="text" name ="CaseHight" [(ngModel)]="productmodel.caseHeight" > </div>
+    <div class='row-items'><label style="font-family: 'Gotham'"class= "items">Case Width (in) :</label> <input style="font-family: 'Gotham'" type="text" name ="CaseWidth"[(ngModel)]="productmodel.caseWidth" > </div>
+    <div class='row-items'><label style="font-family: 'Gotham'"class= "items">Case Length(in) :</label> <input style="font-family: 'Gotham'"type="text" name ="CaseLength"[(ngModel)]="productmodel.caseLength" ></div>
+    <div class='row-items'><label style="font-family: 'Gotham'"class= "items">Case Weight :</label> <input  style="font-family: 'Gotham'"type="text" name ="CaseWight" [(ngModel)]="productmodel.caseWeight" > </div>
+    <div class='row-items'><label style="font-family: 'Gotham'"class= "items">Case Unit Quantity:</label> <input  style="font-family: 'Gotham'"type="text" name ="CaseUnitQuantity" [(ngModel)]="productmodel.caseUnitQuantity" > </div>
+        </div> 
+
+        
+
+    <div >
+        <div><h1 class= "Title" style="font-family: 'Gotham'">Item Details</h1></div>
+        <div class='row-items'> <label style="font-family: 'Gotham'"class= "items">Item Hight(in) : </label> <input  style="font-family: 'Gotham'"type="text" name ="ItemHight" [(ngModel)]="productmodel.itemHeight" > </div>
+        <div class='row-items'> <label style="font-family: 'Gotham'"class= "items">Item Width (in) : </label><input style="font-family: 'Gotham'" type="text" name ="ItemWidth" [(ngModel)]="productmodel.itemWidth"> </div>
+        <div class='row-items'> <label style="font-family: 'Gotham'"class= "items">Item Length(in) : </label><input style="font-family: 'Gotham'" type="text" name ="ItemLength" [(ngModel)]="productmodel.itemLength"> </div>
+        <div class='row-items'> <label style="font-family: 'Gotham'"class= "items">Item Weight : </label> <input style="font-family: 'Gotham'" type="text" name ="ItemWight" [(ngModel)]="productmodel.itemWeight"> </div>
+        <div class='row-items'> <label style="font-family: 'Gotham'"class= "items">is Over size item ? </label>
+            <select  id="vendorsnames" style="width: 51%;" [(ngModel)]="productmodel.overSizeItem">
+                <option value="true"style="font-family: 'Gotham'">True</option>
+                <option value="false"style="font-family: 'Gotham'">False</option>
+              </select></div> 
+
+    </div> 
+
+    <div>
+        <div><h1 style="font-family: 'Gotham'"class= "Title">Unit Details</h1></div>
+        <div class='row-items'> <label style="font-family: 'Gotham'"class= "items">Unit Hight(in) : </label> <input style="font-family: 'Gotham'" type="text" name ="ItemHight" [(ngModel)]="productmodel.unitHeight" > </div>
+        <div class='row-items'> <label style="font-family: 'Gotham'"class= "items">Unit Width (in) : </label><input style="font-family: 'Gotham'" type="text" name ="ItemWidth" [(ngModel)]="productmodel.unitWidth"> </div>
+        <div class='row-items'> <label style="font-family: 'Gotham'"class= "items">Unit Length(in) : </label><input style="font-family: 'Gotham'" type="text" name ="ItemLength" [(ngModel)]="productmodel.unitLength"> </div>
+        <div class='row-items'> <label style="font-family: 'Gotham'"class= "items">Unit Weight : </label> <input style="font-family: 'Gotham'" type="text" name ="ItemWight" [(ngModel)]="productmodel.unitWeight"> </div>
+        <div class='row-items'> <label style="font-family: 'Gotham'"class= "items">Estimated Inbound CostPerUnit : </label><input style="font-family: 'Gotham'" type="text" name ="Oversizeitem" [(ngModel)]="productmodel.costPerUnit"></div>
+
+    </div> 
+    
+</div>
+
+<div class="button"> 
+    <button  mat-raised-button [mat-dialog-close]="true" style="font-family: 'Gotham'"(click)=onSubmit()>save</button></div>
+<!-- </form> -->
+
+
+
+</body>

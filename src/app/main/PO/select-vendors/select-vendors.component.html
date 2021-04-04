@@ -1,0 +1,11 @@
+<h1 mat-dialog-title style="font-family: Gotham; ">Select Vendor</h1>
+<div mat-dialog-content>
+
+  <div class='row-items'><label style="font-family: Gotham; " class= "items">Product Vendor Name: </label> 
+    <select style="font-family: Gotham; " id="vendorsnames" [(ngModel)]="vendorId" >
+      <option style="font-family: Gotham; " *ngFor="let Item of Vendor" [value]="Item.id"  >{{Item.vendorName}}</option>
+    </select>
+                    </div>
+<div class='button'><button style="font-family: Gotham; " mat-raised-button [mat-dialog-close]="true" (click)=onSubmit(vendorId)>Go to vendor's Product</button></div>
+
+</div> 

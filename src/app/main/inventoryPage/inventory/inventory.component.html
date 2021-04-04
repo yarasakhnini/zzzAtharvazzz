@@ -1,0 +1,149 @@
+<div class="page"  >
+<mat-drawer-container>
+  <mat-drawer mode="side" [opened]="sidebarOpen">
+ 
+   <mat-nav-list class="filtter">
+    <div class="vendor-Name">
+      <div><h1 style="font-family: 'Gotham'">Vendor Name: </h1></div> 
+        <select  id="vendorsnames"(change)='FiltterValues()' onfocus='this.size=5;' onblur='this.size=1;' style="width: 80%;overflow: auto;font-family: 'Gotham'" [(ngModel)]="productfillter.vendorId">
+          <option *ngFor="let Item of Vendor"  style="font-family: 'Gotham'"[value]="Item.id">{{Item.vendorName}}</option>
+        </select>
+    </div>
+     
+     <mat-divider ></mat-divider>
+  
+     <div class="unit-cost">
+     <div><h1 style="font-family: 'Gotham'">UNIT COST</h1> </div> 
+       <div><mat-checkbox type="checkbox" style="font-family: 'Gotham'"[(ngModel)]='productfillter.unitCost0to500' (change)='FiltterValues()' class="example-margin">$ 0 to $500</mat-checkbox></div> 
+     <div><mat-checkbox type="checkbox" style="font-family: 'Gotham'"[(ngModel)]='productfillter.unitCost501to1000' (change)='FiltterValues()' class="example-margin">$ 501 to $1000</mat-checkbox></div> 
+      <div> <mat-checkbox type="checkbox" style="font-family: 'Gotham'"[(ngModel)]='productfillter.unitCost1000to5000' (change)='FiltterValues()' class="example-margin">$ 1000 to $5000</mat-checkbox></div> 
+      <div> <mat-checkbox type="checkbox" style="font-family: 'Gotham'"[(ngModel)]='productfillter.unitCostMoreThan5000' (change)='FiltterValues()' class="example-margin">$ 5000 +</mat-checkbox></div> 
+    </div>
+
+    <mat-divider ></mat-divider>
+
+    <div class="quantity">
+        <div><h1 style="font-family: 'Gotham'">QUANTITY</h1> </div> 
+          <div><mat-checkbox type="checkbox" style="font-family: 'Gotham'"[(ngModel)]='productfillter.quantity0to500' (change)='FiltterValues()' class="example-margin"> 0 to 500</mat-checkbox></div> 
+        <div> <mat-checkbox type="checkbox" style="font-family: 'Gotham'"[(ngModel)]='productfillter.quantity501to1000' (change)='FiltterValues()' class="example-margin">501 to 1000</mat-checkbox></div> 
+         <div> <mat-checkbox type="checkbox" style="font-family: 'Gotham'"[(ngModel)]='productfillter.quantity1000to5000' (change)='FiltterValues()' class="example-margin">$ 1000 to $5000</mat-checkbox></div> 
+         <div> <mat-checkbox type="checkbox" style="font-family: 'Gotham'"[(ngModel)]='productfillter.quantityMoreThan5000' (change)='FiltterValues()' class="example-margin">$ 5000 +</mat-checkbox></div> 
+       </div>
+       
+       <mat-divider ></mat-divider>
+       <div class="status">
+        <div><h1 style="font-family: 'Gotham'">Status</h1> </div> 
+          <div><mat-checkbox type="checkbox" style="font-family: 'Gotham'"[(ngModel)]='productfillter.active' (change)='FiltterValues()' class="example-margin">Active</mat-checkbox></div> 
+        <div> <mat-checkbox type="checkbox" style="font-family: 'Gotham'"[(ngModel)]='productfillter.inactive' (change)='FiltterValues()' class="example-margin">Inactive</mat-checkbox></div> 
+</div>
+</mat-nav-list>
+
+
+
+<div class=" button" style="margin-top: 40%;font-family: 'Gotham'">
+  <button mat-button (click)="togglesidbar()" style="color:#def3ff ;font-family: 'Gotham'">
+    <mat-icon style="color: #def3ff">keyboard_arrow_left</mat-icon>
+    Collapse Menu
+   
+  </button>
+</div>
+   </mat-drawer>
+   <mat-drawer-content>
+<div class="row px-80" style="margin-top: 20px;">
+  <span class="component-title"style="font-family: 'Gotham'">Products</span>
+</div>
+<div class="row px-80">
+  <button mat-raised-button	class="m-1" style="border: #05CBBF solid 1px;color: #05CBBF; box-shadow: none;font-family: 'Gotham'"(click)="togglesidbar()">
+    Filter
+    <mat-icon style="color:#05CBBF">filter_alt</mat-icon>
+  </button>
+
+  
+  <button mat-raised-button	 [matMenuTriggerFor]="menu" class="m-1" style="background:#05CBBF ;color: #ffffff;width:4cm;font-family: 'Gotham';
+  border-radius: 5px; box-shadow: none; ">
+    Actions
+    <mat-icon style="color:#b8b4b4">keyboard_arrow_down</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item style="font-family: 'Gotham'" (click)="onCreat()">Add Product</button>
+    <button mat-menu-item style="font-family: 'Gotham'"(click)="RemoveSelection()">Delete Product</button>
+    <label mat-menu-item style="font-family: 'Gotham'" ><input type="file"style="font-family: 'Gotham'" ngf-select ng-model="new_files" (change)="onFileChange($event)" multiple style="display:none"/>Upload Product </label>
+    <button mat-menu-item style="font-family: 'Gotham'"(click)="exporter.exportTable('csv')" >Download Product</button>
+  </mat-menu>    
+  <button mat-raised-button class="m-1" style="font-family: 'Gotham'" (click)="ExcelTemplete()" style="background:#05CBBF ; color: #ffffff; width:6cm;
+  border-radius: 5px; position:revert; font-family: 'Gotham '; box-shadow: none; left: -2%;">Downloade Excel Templete</button> 
+
+<mat-form-field class="example-full-width search-input" style="font-family: 'Gotham'">
+  <input (keyup)="applayFilter($event.target.value)" style="font-family: 'Gotham'" matInput placeholder="Search">
+</mat-form-field>
+
+</div>
+<div class="row px-80" >
+  <table mat-table matTableExporter [dataSource]="dataSource" #exporter="matTableExporter"  class="table table-hover" style="font-family: 'Gotham Book', 'Arial Narrow', Arial, sans-serif;">
+
+
+    <ng-container matColumnDef="chked">
+        <th mat-header-cell *matHeaderCellDef class="mt-tbl mt-tbl-th mt-tbl-chked">
+            <mat-checkbox (change)="$event ? masterToggle() : null"
+            [checked]="selection.hasValue() && isAllSelected()"
+            [indeterminate]="selection.hasValue() && !isAllSelected()">
+            </mat-checkbox>
+        </th>
+        <td mat-cell *matCellDef="let element" class="mt-tbl mt-tbl-td mt-tbl-chked"> 
+            <mat-checkbox (click)="$event.stopPropagation()"
+                          (change)="$event ? selection.toggle(element) : null"
+                          [checked]="selection.isSelected(element)"
+            ></mat-checkbox>
+        </td>
+    </ng-container>
+
+    <ng-container matColumnDef="SKU">
+      <th mat-header-cell *matHeaderCellDef style="font-family: 'Gotham'"class="mt-tbl mt-tbl-th mt-tbl-userid">SKU#</th>
+      <td mat-cell *matCellDef="let element" class="mt-tbl mt-tbl-td mt-tbl-userid" style=" font-family: 'Gotham'; text-decoration: underline;" (click)="selectedrow(element)"> {{element.sku}} </td>
+    </ng-container>
+    <ng-container matColumnDef="UPC/EAN">
+      <th mat-header-cell *matHeaderCellDef style="font-family: 'Gotham'"class="mt-tbl mt-tbl-th mt-tbl-fname">UPC/EAN Number</th>
+      <td mat-cell *matCellDef="let element" style=" font-family: 'Gotham';"  class="mt-tbl mt-tbl-td mt-tbl-fname"(click)="selectedrow(element)"> {{element.upcNumber}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Product_Name">
+      <th mat-header-cell *matHeaderCellDef style="font-family: 'Gotham'"class="mt-tbl mt-tbl-th mt-tbl-lname">Product Name</th>
+      <td mat-cell *matCellDef="let element" style=" font-family: 'Gotham'; "  class="mt-tbl mt-tbl-td mt-tbl-lname"(click)="selectedrow(element)"> {{element.productName}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Unit_Cost">
+      <th mat-header-cell *matHeaderCellDef class="mt-tbl mt-tbl-th mt-tbl-unitCost" style="text-align: center;font-family: 'Gotham'">Unit Cost</th>
+      <td mat-cell *matCellDef="let element" style=" font-family: 'Gotham';"  class="mt-tbl mt-tbl-td mt-tbl-lname"(click)="selectedrow(element)"> {{element.unitCost}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Vname">
+      <th mat-header-cell *matHeaderCellDef class="mt-tbl mt-tbl-th mt-tbl-Vname" style="text-align: center;font-family: 'Gotham'">Vendor Name</th>
+      <td mat-cell *matCellDef="let element"  style=" font-family: 'Gotham';" class="mt-tbl mt-tbl-td mt-tbl-lname"(click)="selectedrow(element)"> {{element.vendor.vendorName}} </td>
+    </ng-container>
+  
+
+    <ng-container matColumnDef="Quantity">
+      <th mat-header-cell *matHeaderCellDef class="mt-tbl mt-tbl-th mt-tbl-Quntiti" style="text-align: center;font-family: 'Gotham'">QUANTIY INSTOCK</th>
+      <td mat-cell *matCellDef="let element" style=" font-family: 'Gotham';"  class="mt-tbl mt-tbl-td mt-tbl-lname" (click)="selectedrow(element)"> 
+        {{element.avalibaleQuantity}}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef class="mt-tbl mt-tbl-th mt-tbl-Action" style="text-align: center;font-family: 'Gotham';">Actions</th>
+      <td mat-cell *matCellDef="let element" class="mt-tbl mt-tbl-td mt-tbl-lname">
+     
+        <button mat-icon-button (click)="updateProduct(element)"><mat-icon>launch</mat-icon></button>
+     
+    </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+ 
+</div>
+<div class="row px-80">
+  <mat-paginator #paginator  [pageSize]="10" [pageSizeOptions]="[5, 10, 15,20]" ></mat-paginator>
+</div>
+
+ 
+</mat-drawer-content>
+</mat-drawer-container>
+</div>

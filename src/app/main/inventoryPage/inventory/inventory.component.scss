@@ -1,0 +1,220 @@
+.page{
+  height: 100vh;
+}
+
+table {
+    width: 100%;
+  }
+
+  @font-face {
+    font-family: 'Gotham';
+    src: url(src\assets\GothamBookRegular.otf) format("opentype");
+    }
+  
+
+  mat-drawer{
+    width: 14%;
+    background-color: #3e525d;
+    //margin-right: 90px;
+  //  height: 100%;
+  }
+  .px-80 mat-paginator {
+    font-family: Gotham;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 45px;
+    padding-bottom: 16 px;
+    flex-wrap: wrap-reverse;
+    width: 100%;
+    color: #050101;
+    font-size: 14px;
+  }
+  
+  
+  mat-drawer-container{
+    padding-left: 0;
+   
+  }
+  mat-drawer-content{
+    padding-left: 0%;
+  }
+
+  .mat-divider{
+    height: 0;
+     margin-left:  5%;
+     margin-right: 5%;
+     width: 85% ;
+     border-top-color: #def3ff;
+   padding-bottom: 10%;;
+   }
+
+   .mat-checkbox{
+ 
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 100%;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.14;
+    letter-spacing: 0.21px;
+    text-align: left;
+    color: #def3ff;
+   
+  }
+
+
+ 
+  h1 {
+   
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 120%;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.21;
+    letter-spacing: 0.29px;
+    text-align: left;
+    color: #def3ff;
+  }
+
+.mt-tbl-chked{
+  width:50px;
+  color: #05CBBF;
+}
+.mt-tbl {
+  text-align: left;
+ 
+ // text-underline-position: ;
+}
+.mt-tbl-fname ,.mt-tbl-lname{
+  text-align: center;
+}
+.pt-3{
+  padding-top: 3rem;
+}
+.mb-3{
+  margin-bottom: 3rem;
+}
+.m-3{
+  margin: 3rem!important;
+
+}
+.m-1{
+  margin: 1rem;
+}
+.search-input{
+  float: right;
+  padding-right: 20vw;
+  min-width: 300px;
+}
+.component-title
+{
+  padding-left: px;
+  width: 111px;
+  height: 27px;
+  font-family: Arial;
+  font-size: 24px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.17;
+  letter-spacing: 0.36px;
+  text-align: left;
+  color: #3e525d;
+}
+.px-80{
+  padding-left: 80px;
+  padding-right: 80px;
+}
+.mat-row{
+  background: white;
+
+  &:hover{
+    background:#f5f5f5;
+  }
+}
+td.mat-cell,th{
+  border-bottom: 0px;
+  border-bottom-width: 0px!important;
+}
+.mat-row{
+  background: white;
+
+  &:hover{
+    background:#f5f5f5;
+  }
+
+}
+
+table tr:nth-child(odd) td
+{background-color: #f2f2f2;}
+
+
+h1 {
+  font-family: Gotham;
+   // font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   font-size: 120%;
+   font-weight: bold;
+   font-stretch: normal;
+   font-style: normal;
+   line-height: 1.21;
+   letter-spacing: 0.29px;
+   text-align: left;
+   color: #def3ff;
+ }
+ ::ng-deep .mat-checkbox .mat-checkbox-frame {
+   background-color: white;
+}
+
+ .mat-checkbox{
+  
+   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   font-size: 100%;
+   font-weight: 500;
+   font-stretch: normal;
+   font-style: normal;
+   line-height: 1.14;
+   letter-spacing: 0.21px;
+   text-align: left;
+   color: #def3ff;
+  
+ }
+
+
+ .vendor-Name{
+   padding-bottom: 20%;
+   padding-top: 20%;
+   margin-left:  5%;
+   overflow: hidden;
+
+ }
+
+ .unit-cost{
+   margin-left:  5%;
+ }
+.mat-divider{
+  height: 0;
+   margin-left:  5%;
+   margin-right: 5%;
+   width: 85% ;
+   border-top-color: #def3ff;
+padding-bottom: 10%;;
+ }
+ .row{
+   flex:1;
+ }
+
+ .quantity{
+   margin-left:  5%;
+ }
+
+ .status{
+   margin-left:  5%;
+ }
+
+ .close-button{
+   padding-top: 15%;
+ }
+
+
